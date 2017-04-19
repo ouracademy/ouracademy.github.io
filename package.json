@@ -1,0 +1,34 @@
+{
+  "name": "ouracademy.github.io",
+  "version": "1.0.0",
+  "description": "our webpage :)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "commitmsg": "validate-commit-msg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouracademy/ouracademy.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ouracademy/ouracademy.github.io/issues"
+  },
+  "homepage": "https://github.com/ouracademy/ouracademy.github.io#readme",
+  "dependencies": {
+    "next": "^2.1.1",
+    "react": "^15.5.4",
+    "react-bootstrap": "^0.30.9",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "husky": "^0.13.3",
+    "validate-commit-msg": "^2.12.1",
+    "webpack": "^2.4.1"
+  }
+}
