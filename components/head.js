@@ -156,21 +156,6 @@ export default () => (
         }
     }
 
-    footer {
-        padding: 50px 0 65px;
-    }
-
-    footer .list-inline {
-        margin: 0;
-        padding: 0;
-    }
-
-    footer .copyright {
-        font-size: 14px;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
     .btn {
         font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         text-transform: uppercase;
