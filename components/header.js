@@ -9,7 +9,7 @@ export default () => (
         <Navbar collapseOnSelect fluid fixedTop className="navbar-custom">
             <Navbar.Header>
                 <Navbar.Brand>
-                    <a href="/">Ouracademy</a>
+                    <a href="/" onClick={() => Router.push('/')}>Ouracademy</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
             </Navbar.Header>
