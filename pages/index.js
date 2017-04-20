@@ -1,6 +1,7 @@
 import Page from '../layouts/main'
 import Posts from '../components/posts'
 import Slider from '../components/slider'
+import {getPosts} from '../server/posts'
 
 export default () => (    
 <Page>
@@ -8,16 +9,3 @@ export default () => (
     <Posts posts={getPosts()}></Posts>
 </Page>
 )
-
-const getPosts = () => {
-    return [
-        {
-            id: 1,
-            title: 'Un post',
-            author: {
-                name: 'Arthur'
-            },
-            publishedAt: new Date()
-        }
-    ];
-}
