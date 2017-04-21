@@ -1,11 +1,24 @@
 import Page from '../layouts/main'
 import Posts from '../components/posts'
 import Slider from '../components/slider'
-import {getPosts} from '../server/posts'
+import fetch from 'isomorphic-fetch'
 
-export default () => (    
+const Index = (props) => (    
 <Page>
     <Slider backgroundImage='/static/img/banner.png'/>
-    <Posts posts={getPosts()}></Posts>
+    <Posts posts={props.posts}/>
 </Page>
 )
+
+Index.getInitialProps = async function () {
+  const res = await fetch('http://localhost:3000/api/posts')
+  const response = await res.json()
+
+  console.log(`Post data fetched. Count: `)
+
+  return {
+    posts: response.data
+  }
+}
+
+export default Index

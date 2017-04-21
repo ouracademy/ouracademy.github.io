@@ -7,10 +7,12 @@ export default ({posts}) => (
                 {
                     posts.map((post) => (
                         <div className="post-preview" key={post.id}>
-                            <Link href="holas">
-                                <h2 className="post-title">
-                                    {post.title}
-                                </h2>
+                            <Link as={`/post/${post.slug}`} href={`/post?slug=${post.slug}`}>
+                                <a>
+                                    <h2 className="post-title">
+                                        {post.title}
+                                    </h2>
+                                </a>
                             </Link>
                             <p className="post-meta">Por <a href="#">{post.author.name}</a> el </p>
                             <hr/>
@@ -19,5 +21,84 @@ export default ({posts}) => (
                 }
             </div>
         </div>
+        <style jsx>{`
+            .post-preview a {
+                color: #333333;
+            }
+
+            .post-preview a:hover,
+            .post-preview a:focus {
+                text-decoration: none;
+                color: #25949f;
+            }
+
+            .post-preview a .post-title {
+                font-size: 30px;
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+
+            .post-preview a .post-subtitle {
+                margin: 0;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+
+            .post-preview .post-meta {
+                color: #777777;
+                font-size: 18px;
+                font-style: italic;
+                margin-top: 0;
+            }
+
+            .post-preview .post-meta a {
+                text-decoration: none;
+                color: #333333;
+            }
+
+            .post-preview .post-meta a:hover,
+            .post-preview .post-meta a:focus {
+                color: #25949f;
+                text-decoration: underline;
+            }
+
+            @media only screen and (min-width: 768px) {
+                .post-preview a .post-title {
+                    font-size: 36px;
+                }
+            }
+
+            .pager {
+                margin: 20px 0 0;
+            }
+
+            .pager li a,
+            .pager li span {
+                font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 800;
+                letter-spacing: 1px;
+                padding: 15px 25px;
+                background-color: white;
+                border-radius: 0;
+            }
+
+            .pager li a:hover,
+            .pager li a:focus {
+                color: white;
+                background-color: #25949f;
+                border: 1px solid #25949f;
+            }
+
+            .pager .disabled a,
+            .pager .disabled a:hover,
+            .pager .disabled a:focus,
+            .pager .disabled span {
+                color: #777777;
+                background-color: #333333;
+                cursor: not-allowed;
+            }
+            `}</style>
     </div>
 )

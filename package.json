@@ -4,7 +4,7 @@
   "description": "our webpage :)",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start",
     "commitmsg": "validate-commit-msg"
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/ouracademy/ouracademy.github.io#readme",
   "dependencies": {
+    "express": "^4.15.2",
+    "isomorphic-fetch": "^2.2.1",
     "next": "^2.1.1",
     "react": "^15.5.4",
     "react-bootstrap": "^0.30.9",

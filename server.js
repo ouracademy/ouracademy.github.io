@@ -1,32 +1,102 @@
-import slugify from 'slugify'
+const express = require('express')
+const next = require('next')
+
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
+
+app.prepare()
+.then(() => {
+  const server = express()
+
+  server.use('/api/posts', posts()) 
+
+  server.get('/post/:slug', (req, res) => {
+      const actualPage = '/post'
+      const queryParams = { slug: req.params.slug }
+      app.render(req, res, actualPage, queryParams)
+  })
+  
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  server.listen(3000, (err) => {
+    if (err) throw err
+    console.log('> Ready on http://localhost:3000')
+  })
+})
+.catch((ex) => {
+  console.error(ex.stack)
+  process.exit(1)
+})
+
+const {Router} = require('express')
+const util = require('util')
+
+function posts() {
+    let router = Router()
+    router.route('/')
+        .get(function (req, res) {
+            console.log('GET') 
+            // 70ms latency
+            setTimeout(function () {
+                res.json({ 'data': getPosts() }) 
+            }, 0) 
+        }) 
+
+    router.param('slug', function (req, res, next) {
+        let post = getPost(req.params.slug) 
+        if (typeof post !== 'undefined') {
+            req.post = post 
+            next() 
+        } else {
+            next(new Error('failed to load post')) 
+        }
+    }) 
+
+    router.route('/:slug')
+        .get(function (req, res) {
+            console.log('GET', util.inspect(req.post.title, { colors: true })) 
+            res.json({ 'data': req.post }) 
+        }) 
+
+    return router 
+} 
 
 // All this is a mock it will be replaced by an event source mock
 // and then with a event source database
 
-export class PublishStatus {
-  static draft = new PublishStatus('draft')
-  static public = new PublishStatus('public')
-  static unlisted = new PublishStatus('unlisted')
+class PublishStatus {
+  static get draft()  { return new PublishStatus('draft') }
+  static get public() { return new PublishStatus('public') }
+  static get unlisted() { return new PublishStatus('unlisted') }
 
   constructor(name) {
       this.name = name
   }
 
-  toString = () => {
+  toString() {
     return this.name
   }
 
   toJSON() {
     return this.name
   }
+
+  equals(object) {
+      return this.name === object.name
+  }
 }
 
-export class Post {
-  id
-  publishStatus
-  publishedAt
-  lastUpdatedAt
-  slug
+const slugify = require('slugify')
+
+class Post {
+  // id
+  // publishStatus
+  // publishedAt
+  // lastUpdatedAt
+  // slug
 
   constructor(author, title, content) {
     this.author = author
@@ -38,8 +108,8 @@ export class Post {
   }
 }
 
-export class Person {
-  id
+ class Person {
+  // id
 
   constructor(name) {
       this.name = name
@@ -400,8 +470,8 @@ hexagonalArchitecture.lastUpdatedAt = new Date(2017, 2, 26)
 
 const POSTS = [whoNeedsAnArchitect, whenTomakeAType, hexagonalArchitecture]
 
-export const getPosts = () =>
-    POSTS.filter(post => post.publishStatus === PublishStatus.public)
+ const getPosts = () => 
+    POSTS.filter(post => post.publishStatus.equals(PublishStatus.public))
         .map(post => {
             return {
                 id: post.id,
@@ -411,3 +481,5 @@ export const getPosts = () =>
                 publishedAt: post.publishedAt
             }
         }).sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
+
+ const getPost = (slug) => POSTS.find(post => post.slug === slug)
