@@ -14,7 +14,7 @@ Index.getInitialProps = async function () {
   const res = await fetch('http://localhost:3000/api/posts')
   const response = await res.json()
 
-  console.log(`Post data fetched. Count: `)
+  console.log(`Post data fetched. Count: ${response.data.length}`)
 
   return {
     posts: response.data

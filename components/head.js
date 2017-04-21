@@ -58,6 +58,13 @@ export default () => (
         text-align: justify;
     }
 
+    figure {
+        text-align: center;
+        display: table;
+        max-width: 30%;
+        margin: 10px auto;
+    }
+
     .navbar-custom {
         position: absolute;
         top: 0;

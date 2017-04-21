@@ -27,6 +27,7 @@
     "react": "^15.5.4",
     "react-bootstrap": "^0.30.9",
     "react-dom": "^15.5.4",
+    "react-share": "^1.13.2",
     "slugify": "^1.1.0"
   },
   "devDependencies": {
