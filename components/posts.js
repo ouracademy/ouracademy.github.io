@@ -14,7 +14,7 @@ export default ({posts}) => (
                                     </h2>
                                 </a>
                             </Link>
-                            <p className="post-meta">Por <a href="#">{post.author.name}</a> el </p>
+                            <p className="post-meta">Por <a href="#">{post.author.name}</a> el {toddmmyyyy(post.publishedAt)}</p>
                             <hr/>
                         </div>
                     ))
@@ -102,3 +102,11 @@ export default ({posts}) => (
             `}</style>
     </div>
 )
+
+// we call use momentjs or FormatJS of React...this second will be oyr next option
+const toddmmyyyy = (stringDate) => {
+  const pad = s => s < 10 ? `0${s}` : s
+  const date = new Date(stringDate)
+  
+  return [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/');
+}
