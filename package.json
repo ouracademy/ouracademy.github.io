@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "set NODE_ENV=production && node server.js",
     "commitmsg": "validate-commit-msg"
   },
   "repository": {
