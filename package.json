@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "husky": "^0.13.3",
-    "validate-commit-msg": "^2.12.1",
-    "webpack": "^2.4.1"
+    "validate-commit-msg": "^2.12.1"
   }
 }

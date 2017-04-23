@@ -1,11 +1,11 @@
 import Head from '../components/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
-export default ({ children }) => (
+export default ({ children, title = 'Ouracademy' }) => (
   <div>
-    <Head />
+    <Head title={title} />
     <Header />
-    { children }
+    {children}
     <Footer />
   </div>
 )

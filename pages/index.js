@@ -3,14 +3,14 @@ import Posts from '../components/posts'
 import Slider from '../components/slider'
 import fetch from 'isomorphic-fetch'
 
-const Index = (props) => (    
-<Page>
-    <Slider backgroundImage='/static/img/banner.png'/>
-    <Posts posts={props.posts}/>
-</Page>
+const Index = ({posts}) => (
+  <Page title="Ouracademy">
+    <Slider backgroundImage='/static/img/banner.png' />
+    <Posts posts={posts} />
+  </Page>
 )
 
-Index.getInitialProps = async function () {
+Index.getInitialProps = async () => {
   const res = await fetch('http://localhost:3000/api/posts')
   const response = await res.json()
 

@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
-export default () => (
+export default ({title}) => (
 <Head>
     <meta charSet="UTF-8"/>
-    <title>Ouracademy</title>
+    <title>{title}</title>
     <meta name="description" content="Ouracademy es una academia para aprender de ingeniería de software, desde métodos y prácticas hasta las últimas tecnologías en el desarrollo de software"/>
     <meta name="keywords" content="Ouracademy, desarrollo de software, software, ingeniería de software, educación"/>
     <meta name="viewport" content="width=device-width,minimum-scale=1"/>

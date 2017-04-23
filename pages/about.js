@@ -2,7 +2,7 @@ import Page from '../layouts/main'
 import Slider from '../components/slider'
 
 export default () => (
-  <Page>
+  <Page title="Nosotros">
     <Slider title="Nosotros" subheading="Un grupo de amigos que se divierte aprendiendo"/>
     <div className="container">
       <div className="row">
@@ -21,7 +21,7 @@ export default () => (
 const PortFolio = ({projects}) => (
   <div className="portfolio">
     <h3 className="portfolio__head--primary">Nuestros Proyectos</h3>
-    {
+    <div className="porfolio__content">{
       projects.map((project, index) => (
         <div className="panel panel-default" key={index}>
           <a href={project.url} target="_blank">
@@ -31,20 +31,35 @@ const PortFolio = ({projects}) => (
           </a>
         </div>
       ))
-    }
+    }</div>
     <style jsx>{`
+        .portfolio {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+         .porfolio__content {
+          display: flex;
+          align-items: center;
+          justify-content:center;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
         .portfolio .portfolio__head--primary {
             text-align: center;
             margin: 40px;
             color: #b5bcbe;
         }
 
-        .portfolio__item {
-            position: relative;
-            overflow: hidden;
-            width: 400px;
-            margin-right: 10px;
-            margin-left: 10px;
+        .portfolio .panel-default {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 18rem;
+          height: 8rem;
+          margin:0.5rem;
         }
       `}</style>
   </div>
