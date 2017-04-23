@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "set NODE_ENV=production && node server.js",
+    "start": "node server.js -p $PORT",
+    "heroku-postbuild": "heroku-nextjs-build",
     "commitmsg": "validate-commit-msg"
   },
   "repository": {
@@ -20,7 +21,11 @@
     "url": "https://github.com/ouracademy/ouracademy.github.io/issues"
   },
   "homepage": "https://github.com/ouracademy/ouracademy.github.io#readme",
+  "engines": {
+    "node": "6.9.x"
+  },
   "dependencies": {
+    "@mars/heroku-nextjs-build": "^2.0.0",
     "express": "^4.15.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "^2.1.1",
@@ -32,7 +37,6 @@
   },
   "devDependencies": {
     "husky": "^0.13.3",
-    "validate-commit-msg": "^2.12.1",
-    "webpack": "^2.4.1"
+    "validate-commit-msg": "^2.12.1"
   }
 }
