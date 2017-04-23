@@ -11,7 +11,7 @@ const Index = (props) => (
 )
 
 Index.getInitialProps = async function () {
-  const res = await fetch('http://localhost:3000/api/posts')
+  const res = await fetch('https://ouracademy.herokuapp.com/api/posts')
   const response = await res.json()
 
   console.log(`Post data fetched. Count: ${response.data.length}`)

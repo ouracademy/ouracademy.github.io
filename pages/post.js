@@ -95,7 +95,7 @@ const Post =  (props) => {
 
 Post.getInitialProps = async function (context) {
   const { slug } = context.query
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`)
+  const res = await fetch(`https://ouracademy.herokuapp.com/api/posts/${slug}`)
   const response = await res.json()
 
   console.log(`Fetched post: ${response.data.title}`)
