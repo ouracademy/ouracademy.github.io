@@ -19,7 +19,7 @@ const TwitterIcon = generateShareIcon('twitter');
 const LinkedinIcon = generateShareIcon('linkedin');
 
 const Post =  (props) => {
-    const url = `${props.url.pathname}/${props.url.query.slug}`;
+    const url = `http://www.academyfor.us/post/${props.url.pathname}/${props.url.query.slug}`;
 
     return(
         <Page>
