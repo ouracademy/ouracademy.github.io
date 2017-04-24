@@ -1,10 +1,6 @@
 const cors = require('cors')
 const express = require('express')
 const next = require('next')
-const cors = require('cors')
-
-
-
 
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 3000
