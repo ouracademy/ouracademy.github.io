@@ -1,7 +1,7 @@
 const cors = require('cors')
 const express = require('express')
 const next = require('next')
-const cors = require('cors')
+
 
 
 
@@ -16,7 +16,7 @@ app.prepare()
 .then(() => {
   const server = express()
 
-  server.use(cors({origin: [/http:\/\/www.academyfor.us\/*/, 'https://ouracademy.herokuapp.com/']}))
+  server.use(cors({origin: [/http:\/\/www.academyfor.us\/*/, 'https://ouracademy.herokuapp.com/','localhost']}))
   server.use('/api/posts', posts()) 
 
   server.get('/post/:slug', (req, res) => {
