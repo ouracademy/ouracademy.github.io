@@ -1,3 +1,4 @@
+const cors = require('cors')
 const express = require('express')
 const next = require('next')
 const cors = require('cors')
@@ -11,35 +12,32 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 app.prepare()
-    .then(() => {
-        const server = express()
-        server.use(cors())
-       /* const corsOptions = {
-            origin: /^http://www.academyfor.us*$/,
-            optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
-        }*/
 
-        server.use('/api/posts', posts())
+.then(() => {
+  const server = express()
 
-        server.get('/post/:slug', (req, res) => {
-            const actualPage = '/post'
-            const queryParams = { slug: req.params.slug }
-            app.render(req, res, actualPage, queryParams)
-        })
+  server.use(cors({origin: [/http:\/\/www.academyfor.us\/*/, 'https://ouracademy.herokuapp.com/']}))
+  server.use('/api/posts', posts()) 
 
-        server.get('*', (req, res) => {
-            return handle(req, res)
-        })
+  server.get('/post/:slug', (req, res) => {
+      const actualPage = '/post'
+      const queryParams = { slug: req.params.slug }
+      app.render(req, res, actualPage, queryParams)
+  })
+  
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
 
-        server.listen(port, (err) => {
-            if (err) throw err
-            console.log(`> Ready on http://localhost:${port}`)
-        })
-    })
-    .catch((ex) => {
-        console.error(ex.stack)
-        process.exit(1)
-    })
+  server.listen(port, (err) => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
+})
+.catch((ex) => {
+  console.error(ex.stack)
+  process.exit(1)
+})
 
 const {Router} = require('express')
 const util = require('util')
