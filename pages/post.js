@@ -22,7 +22,7 @@ const Post =  (props) => {
     const url = `http://www.academyfor.us/post/${props.url.pathname}/${props.url.query.slug}`;
 
     return(
-        <Page>
+        <Page title={props.post.title}>
             <Slider title={props.post.title}/>
             <article>
                 <div  className="container">
