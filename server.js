@@ -1,5 +1,9 @@
 const express = require('express')
 const next = require('next')
+const cors = require('cors')
+
+
+
 
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 3000
@@ -7,30 +11,35 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 app.prepare()
-.then(() => {
-  const server = express()
+    .then(() => {
+        const server = express()
+        server.use(cors())
+       /* const corsOptions = {
+            origin: /^http://www.academyfor.us*$/,
+            optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+        }*/
 
-  server.use('/api/posts', posts()) 
+        server.use('/api/posts', posts())
 
-  server.get('/post/:slug', (req, res) => {
-      const actualPage = '/post'
-      const queryParams = { slug: req.params.slug }
-      app.render(req, res, actualPage, queryParams)
-  })
-  
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  })
+        server.get('/post/:slug', (req, res) => {
+            const actualPage = '/post'
+            const queryParams = { slug: req.params.slug }
+            app.render(req, res, actualPage, queryParams)
+        })
 
-  server.listen(port, (err) => {
-    if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
-  })
-})
-.catch((ex) => {
-  console.error(ex.stack)
-  process.exit(1)
-})
+        server.get('*', (req, res) => {
+            return handle(req, res)
+        })
+
+        server.listen(port, (err) => {
+            if (err) throw err
+            console.log(`> Ready on http://localhost:${port}`)
+        })
+    })
+    .catch((ex) => {
+        console.error(ex.stack)
+        process.exit(1)
+    })
 
 const {Router} = require('express')
 const util = require('util')
@@ -39,89 +48,89 @@ function posts() {
     let router = Router()
     router.route('/')
         .get(function (req, res) {
-            console.log('GET') 
+            console.log('GET')
             // 70ms latency
             setTimeout(function () {
-                res.json({ 'data': getPosts() }) 
-            }, 0) 
-        }) 
+                res.json({ 'data': getPosts() })
+            }, 0)
+        })
 
     router.param('slug', function (req, res, next) {
-        let post = getPost(req.params.slug) 
+        let post = getPost(req.params.slug)
         if (typeof post !== 'undefined') {
-            req.post = post 
-            next() 
+            req.post = post
+            next()
         } else {
-            next(new Error('failed to load post')) 
+            next(new Error('failed to load post'))
         }
-    }) 
+    })
 
     router.route('/:slug')
         .get(function (req, res) {
-            console.log('GET', util.inspect(req.post.title, { colors: true })) 
-            res.json({ 'data': req.post }) 
-        }) 
+            console.log('GET', util.inspect(req.post.title, { colors: true }))
+            res.json({ 'data': req.post })
+        })
 
-    return router 
-} 
+    return router
+}
 
 // All this is a mock it will be replaced by an event source mock
 // and then with a event source database
 
 class PublishStatus {
-  static get draft()  { return new PublishStatus('draft') }
-  static get public() { return new PublishStatus('public') }
-  static get unlisted() { return new PublishStatus('unlisted') }
+    static get draft() { return new PublishStatus('draft') }
+    static get public() { return new PublishStatus('public') }
+    static get unlisted() { return new PublishStatus('unlisted') }
 
-  constructor(name) {
-      this.name = name
-  }
+    constructor(name) {
+        this.name = name
+    }
 
-  toString() {
-    return this.name
-  }
+    toString() {
+        return this.name
+    }
 
-  toJSON() {
-    return this.name
-  }
+    toJSON() {
+        return this.name
+    }
 
-  equals(object) {
-      return this.name === object.name
-  }
+    equals(object) {
+        return this.name === object.name
+    }
 }
 
 const slugify = require('slugify')
 
 class Post {
-  // id
-  // publishStatus
-  // publishedAt
-  // lastUpdatedAt
-  // slug
+    // id
+    // publishStatus
+    // publishedAt
+    // lastUpdatedAt
+    // slug
 
-  constructor(author, title, content) {
-    this.author = author
-    this.title = title
-    this.content = content
-    this.publishStatus = PublishStatus.draft
-    this.slug = slugify(this.title.toLowerCase())
-    this.lastUpdatedAt = new Date()
-  }
+    constructor(author, title, content) {
+        this.author = author
+        this.title = title
+        this.content = content
+        this.publishStatus = PublishStatus.draft
+        this.slug = slugify(this.title.toLowerCase())
+        this.lastUpdatedAt = new Date()
+    }
 }
 
- class Person {
-  // id
+class Person {
+    // id
 
-  constructor(name) {
-      this.name = name
-  }
+    constructor(name) {
+        this.name = name
+    }
 }
 
 let arthur = new Person("Arthur Mauricio Delgadillo")
 arthur.id = "1"
 
 let whoNeedsAnArchitect = new Post(arthur, "Quien necesita a un arquitecto?",
-  `
+    `
   <p>Una traducción del articulo de Martin Fowler: <a href="http://www.in-gmbh.eu/uploads/media/whoNeedsArchitect.pdf">Who needs an architect?</a></p>
   <figure>
   <img src="https://cdn-images-1.medium.com/max/800/1*QcyEoP1TzICT3qz88NeO5Q.png"/>
@@ -152,7 +161,7 @@ whoNeedsAnArchitect.publishStatus = PublishStatus.public
 whoNeedsAnArchitect.id = '1'
 
 let whenTomakeAType = new Post(arthur, 'Cuando crear un Tipo (en un lenguaje de programación)?',
-  `
+    `
 <blockquote>Una traducción al español del articulo de Martin Fowler: <a href="https://pdfs.semanticscholar.org/2a01/e1f14172a91215931ed787d97dee1301fe7d.pdf">When to make a Type</a></blockquote>
 <p>Cuando empece a programar, empece con lenguajes muy primitivos, como Fortran 4 y con tempranos sabores de Basic. Uno de los primeras cosas que aprendes a usar en esos lenguajes — incluso con los lenguajes actuales (i.e., Typescript, Go, Clojure) — es que tipos (i.e., números reales y enteros, cadenas de caracteres, arreglos) tu lenguaje soporta. Siendo orientado a números, Fortran soportaba enteros y tipos reales, con la regla interesante que cualquier variable cuyo nombre empiece con las letras I a N fuera un entero, y todas las otras variables reales (flotantes). Estoy alegre que esa convención no haya sido cogida, aunque Perl está cerca. Además, usar lenguajes orientados a objetos, puedes definir tus propios tipos y en los mejores lenguajes, estos actúan tal como los predefinidos.</p>
 <h2>Definiendo tipos</h2>
@@ -176,7 +185,7 @@ whenTomakeAType.publishStatus = PublishStatus.public
 whenTomakeAType.id = '2'
 
 let hexagonalArchitecture = new Post(arthur, 'Arquitectura hexagonal',
-  `<p>Cree su aplicación para que funcione sin una interfaz de usuario o una base de datos de tal forma que pueda ejecutar pruebas de regresión automatizadas, trabajar aún cuando la base de datos no este disponible y conectar aplicaciones sin la intervención
+    `<p>Cree su aplicación para que funcione sin una interfaz de usuario o una base de datos de tal forma que pueda ejecutar pruebas de regresión automatizadas, trabajar aún cuando la base de datos no este disponible y conectar aplicaciones sin la intervención
     del usuario.</p>
 <blockquote>Una traducción del articulo de Alistair Cockburn: <a href="http://alistair.cockburn.us/Hexagonal+architecture">Hexagonal Architecture</a>. Todas las gracias a él por permitirnos traducir su articulo</blockquote>
 <figure>
@@ -471,7 +480,7 @@ hexagonalArchitecture.lastUpdatedAt = new Date(2017, 2, 26)
 
 const POSTS = [whoNeedsAnArchitect, whenTomakeAType, hexagonalArchitecture]
 
- const getPosts = () => 
+const getPosts = () =>
     POSTS.filter(post => post.publishStatus.equals(PublishStatus.public))
         .map(post => {
             return {
@@ -483,4 +492,4 @@ const POSTS = [whoNeedsAnArchitect, whenTomakeAType, hexagonalArchitecture]
             }
         }).sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
 
- const getPost = (slug) => POSTS.find(post => post.slug === slug)
+const getPost = (slug) => POSTS.find(post => post.slug === slug)
