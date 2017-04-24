@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@mars/heroku-nextjs-build": "^2.0.0",
+    "cors": "^2.8.3",
     "express": "^4.15.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "^2.1.1",
