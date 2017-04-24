@@ -8,6 +8,8 @@ import {
   generateShareIcon,
 } from 'react-share';
 
+const config = require('../env.json')[process.env.NODE_ENV || 'development']
+
 const {
   FacebookShareButton,
   TwitterShareButton,
@@ -95,7 +97,7 @@ const Post =  (props) => {
 
 Post.getInitialProps = async function (context) {
   const { slug } = context.query
-  const res = await fetch(`https://ouracademy.herokuapp.com/api/posts/${slug}`)
+  const res = await fetch(config.API_BASE + `/posts/${slug}`)
   const response = await res.json()
 
   console.log(`Fetched post: ${response.data.title}`)
