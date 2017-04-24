@@ -11,7 +11,7 @@ app.prepare()
 .then(() => {
   const server = express()
 
-  server.use(cors({origin: ['http://www.academyfor.us/', 'https://ouracademy.herokuapp.com/']}))
+  server.use(cors({origin: [/http:\/\/www.academyfor.us\/*/, 'https://ouracademy.herokuapp.com/']}))
   server.use('/api/posts', posts()) 
 
   server.get('/post/:slug', (req, res) => {
