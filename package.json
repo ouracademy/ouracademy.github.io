@@ -37,6 +37,7 @@
     "slugify": "^1.1.0"
   },
   "devDependencies": {
+    "babel-plugin-transform-define": "^1.2.0",
     "husky": "^0.13.3",
     "validate-commit-msg": "^2.12.1"
   }
