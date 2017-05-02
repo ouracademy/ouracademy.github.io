@@ -45,7 +45,7 @@ function posts() {
             console.log('GET')
             // 70ms latency
             setTimeout(function () {
-                res.json({ 'data': getPosts() })
+                res.json({ data: getPosts() })
             }, 0)
         })
 
@@ -62,7 +62,7 @@ function posts() {
     router.route('/:slug')
         .get(function (req, res) {
             console.log('GET', util.inspect(req.post.title, { colors: true }))
-            res.json({ 'data': req.post })
+            res.json({ data: req.post })
         })
 
     return router
