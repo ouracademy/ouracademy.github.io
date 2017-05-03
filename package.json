@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "node server.js -p $PORT",
+    "start": "NODE_ENV=production node server.js -p $PORT",
     "heroku-postbuild": "heroku-nextjs-build",
     "commitmsg": "validate-commit-msg"
   },
