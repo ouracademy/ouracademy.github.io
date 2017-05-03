@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "iojs"
   - "7"
-script: npm run build && npm start
+script: yarn run build && yarn start
