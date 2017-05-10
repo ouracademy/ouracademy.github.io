@@ -5,15 +5,15 @@ export default () => (
   <Page title="Nosotros">
     <Slider title="Nosotros" subheading="Un grupo de amigos que se divierte aprendiendo"/>
     <div className="container">
-      <div className="row">
+      <section title="nosotros" className="row">
           <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <p>Somos un grupo de amigos que queremos aprender y enseñar buenas practicas,tecnologias y teorias que involucran
                   desarrollar software.</p>
           </div>
-      </div>
-      <div className="row">
+      </section>
+      <section title="portfolio" className="row">
         <PortFolio projects={getProjects()} />
-      </div>
+      </section>
     </div>
   </Page>
 )

@@ -5,7 +5,7 @@ export default ({ children, title = 'Ouracademy' }) => (
   <div>
     <Head title={title} />
     <Header />
-    {children}
+    <main>{children}</main>
     <Footer />
   </div>
 )

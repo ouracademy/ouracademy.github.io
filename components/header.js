@@ -5,7 +5,7 @@ import NavItem from 'react-bootstrap/lib/NavItem'
 import Router from 'next/router'
 
 export default () => (
-    <div>
+    <header>
         <Navbar collapseOnSelect fluid fixedTop className="navbar-custom">
             <Navbar.Header>
                 <Navbar.Brand>
@@ -20,5 +20,5 @@ export default () => (
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
-    </div>
+    </header>
 )
