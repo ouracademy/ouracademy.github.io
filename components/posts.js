@@ -1,6 +1,7 @@
+import { gql, graphql } from 'react-apollo'
 import Link from 'next/link'
 
-export default ({posts}) => (
+const Posts = ({posts}) => (
     <section title="posts">
         <div className="container">
             <div className="row">
@@ -112,3 +113,38 @@ const toddmmyyyy = (stringDate) => {
   
   return [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/');
 }
+
+const PostList = ({ data: { allPosts }}) => {
+    if(allPosts) {
+        return <Posts posts={allPosts} />
+    }
+    return <div>Loading</div>
+}
+
+const POSTS_PER_PAGE = 10;
+
+const allPosts = gql`
+    query allPosts($first: Int!) {
+        allPosts(orderBy: publishedAt_DESC, first: $first) {
+            id
+            title
+            slug
+            publishedAt
+            author {
+                name
+            }
+        }
+    }
+`
+
+// The `graphql` wrapper executes a GraphQL query and makes the results
+// available on the `data` prop of the wrapped component (PostList)
+export default graphql(allPosts, {
+  options: {
+    variables: {
+      first: POSTS_PER_PAGE
+    }
+  },props: ({ data }) => ({
+    data
+  })
+})(PostList)

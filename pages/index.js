@@ -2,23 +2,11 @@ import Page from '../layouts/main'
 import Posts from '../components/posts'
 import Slider from '../components/slider'
 import fetch from 'isomorphic-fetch'
+import withData from '../lib/withData'
 
-const Index = ({ posts }) => (
+export default withData(() => (
   <Page title="Ouracademy">
     <Slider backgroundImage='/static/img/banner.png' />
-    <Posts posts={posts} /> 
+    <Posts/> 
   </Page>
-)
-
-Index.getInitialProps = async () => {
-  const res = await fetch(BACKEND_URL + '/posts')
-  const response = await res.json()
-
-  console.log(`Post data fetched. Count: ${response.data.length}`)
-
-  return {
-    posts: response.data
-  }
-}
-
-export default Index
+))
