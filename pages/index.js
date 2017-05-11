@@ -1,7 +1,6 @@
 import Page from '../layouts/main'
 import Posts from '../components/posts'
 import Slider from '../components/slider'
-import fetch from 'isomorphic-fetch'
 import withData from '../lib/withData'
 
 export default withData(() => (
