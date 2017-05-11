@@ -1,8 +1,9 @@
-import Page from '../layouts/main'
+import Page from '../layouts/main/index'
 import Slider from '../components/slider'
 
 export default () => (
-  <Page title="Nosotros">
+  <Page>
+    <Page.Head title="Nosotros" />
     <Slider title="Nosotros" subheading="Un grupo de amigos que se divierte aprendiendo"/>
     <div className="container">
       <section title="nosotros" className="row">

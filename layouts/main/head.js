@@ -1,27 +1,29 @@
 import Head from 'next/head'
 
-const containerId='GTM-K7D2R6R'
+const containerId = 'GTM-K7D2R6R'
 
-export default ({title}) => (
-<div>
-    <Head>
-        <meta charSet="UTF-8"/>
-        <title>{title}</title>
-        <meta name="description" content="Ouracademy es una academia para aprender de ingeniería de software, desde métodos y prácticas hasta las últimas tecnologías en el desarrollo de software"/>
-        <meta name="keywords" content="Ouracademy, desarrollo de software, software, ingeniería de software, educación"/>
-        <meta name="viewport" content="width=device-width,minimum-scale=1"/>
+export default ({ title = 'Ouracademy' }) => (
+    <div>
+        <Head>
+            <meta charSet="UTF-8" />
+            <title>{title}</title>
+            <meta name="description" content="Ouracademy es una academia para aprender de ingeniería de software, desde métodos y prácticas hasta las últimas tecnologías en el desarrollo de software" />
+            <meta name="keywords" content="Ouracademy, desarrollo de software, software, ingeniería de software, educación" />
+            <meta name="viewport" content="width=device-width,minimum-scale=1" />
 
-        <script dangerouslySetInnerHTML={{__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            <script dangerouslySetInnerHTML={{
+                __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${containerId}');`}} />
+            })(window,document,'script','dataLayer','${containerId}');`
+            }} />
 
-        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css"/>
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'/>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'/>
+            <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
+            <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
 
-        <style>{`
+            <style>{`
         body {
             font-family: 'Lora', 'Times New Roman', serif;
             font-size: 20px;
@@ -217,8 +219,8 @@ export default ({title}) => (
         }
         `}</style>
 
-        <script async src="https://use.fontawesome.com/56590024a3.js"></script>
-    </Head>
-    <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${containerId}" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
-</div>
+            <script async src="https://use.fontawesome.com/56590024a3.js"></script>
+        </Head>
+        <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${containerId}" height="0" width="0" style="display:none;visibility:hidden;"></iframe>` }} />
+    </div>
 )
