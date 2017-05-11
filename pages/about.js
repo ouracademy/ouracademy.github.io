@@ -1,4 +1,4 @@
-import Page from '../layouts/main/index'
+import Page from '../layouts/main'
 import Slider from '../components/slider'
 
 export default () => (

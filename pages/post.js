@@ -1,10 +1,9 @@
-import { gql, graphql } from 'react-apollo'
-
-import Page from '../layouts/main/index'
+import Page from '../layouts/main'
 import Slider from '../components/slider'
 import PostView from '../components/post'
 
 import withData from '../lib/withData'
+import { gql, graphql } from 'react-apollo'
 
 const SuperPost = ({ data: {Post} }) => {
     if (Post) {
