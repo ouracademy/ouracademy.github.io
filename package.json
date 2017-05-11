@@ -27,17 +27,14 @@
   "dependencies": {
     "@mars/heroku-nextjs-build": "^2.0.0",
     "babel-plugin-transform-define": "^1.2.0",
-    "cors": "^2.8.3",
     "express": "^4.15.2",
     "graphql": "^0.9.6",
-    "isomorphic-fetch": "^2.2.1",
     "next": "^2.2.0",
     "react": "^15.5.4",
     "react-apollo": "^1.2.0",
     "react-bootstrap": "^0.30.9",
     "react-dom": "^15.5.4",
-    "react-share": "^1.13.2",
-    "slugify": "^1.1.0"
+    "react-share": "^1.13.2"
   },
   "devDependencies": {
     "husky": "^0.13.3",
