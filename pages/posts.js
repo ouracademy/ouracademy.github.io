@@ -1,22 +1,26 @@
 import Page from '../layouts/main'
 import Slider from '../components/slider'
-import PostView from '../components/post'
+import PostArticle from '../components/post'
 
 import withData from '../lib/withData'
 import { gql, graphql } from 'react-apollo'
 
-const SuperPost = ({ data: {Post} }) => {
-    if (Post) {
-        return (
-            <Page>
-                <Page.Head title={Post.title} />
-                <Slider title={Post.title} />
-                <PostView post={Post} />
-            </Page>
-        )
-    }
+const Post = ({ data }) => {
+    const page = data.loading ? {
+        title: 'Cargando Post',
+        content: <div>Loading</div>
+    } : {
+            title: data.Post.title,
+            content: <PostArticle post={data.Post} />
+        }
 
-    return <div>Loading</div>
+    return (
+        <Page>
+            <Page.Head title={page.title} />
+            <Slider title={page.title} />
+            {page.content}
+        </Page>
+    )
 }
 
 const postQuery = gql`
@@ -32,8 +36,8 @@ const postQuery = gql`
 const PostPage = graphql(postQuery, {
     options: ({ slug }) => ({ variables: { slug } }),
     props: ({ data }) => ({ data })
-})(SuperPost)
+})(Post)
 
-export default withData((props) => (
-    <PostPage slug={props.url.query.slug}/>
+export default withData(({ url }) => (
+    <PostPage slug={url.query.slug} />
 ))
