@@ -9,7 +9,7 @@ const Posts = ({posts}) => (
                     {
                         posts.map((post) => (
                             <div className="post-preview" key={post.id}>
-                                <Link as={`/post/${post.slug}`} href={`/post?slug=${post.slug}`}>
+                                <Link as={`/posts/${post.slug}`} href={`/posts?slug=${post.slug}`}>
                                     <a>
                                         <h2 className="post-title">
                                             {post.title}

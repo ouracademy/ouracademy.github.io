@@ -9,8 +9,8 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
-  server.get('/post/:slug', (req, res) => {
-      const actualPage = '/post'
+  server.get('/posts/:slug', (req, res) => {
+      const actualPage = '/posts'
       const queryParams = { slug: req.params.slug }
       app.render(req, res, actualPage, queryParams)
   })
