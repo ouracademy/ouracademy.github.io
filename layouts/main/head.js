@@ -2,14 +2,27 @@ import Head from 'next/head'
 
 const containerId = 'GTM-K7D2R6R'
 
-export default ({ title = 'Ouracademy' }) => (
+const defaultMeta = {
+    title: 'Ouracademy',
+    description: 'Ouracademy es una academia para aprender de ingeniería de software, desde métodos y prácticas hasta las últimas tecnologías en el desarrollo de software',
+    og: {
+        type: 'website',
+        img: 'https://scontent.flim1-2.fna.fbcdn.net/v/t1.0-9/10502476_661884230610559_1709997781224995208_n.png?oh=818b1d3b257f56e30c80bc59ed83ab0d&oe=59E52AA0'
+    }
+}
+
+export default ({ title = defaultMeta.title, description = defaultMeta.description, og = defaultMeta.og }) => (
     <div>
         <Head>
-            <meta charSet="UTF-8" />
+            <meta charset="utf-8" />
             <title>{title}</title>
-            <meta name="description" content="Ouracademy es una academia para aprender de ingeniería de software, desde métodos y prácticas hasta las últimas tecnologías en el desarrollo de software" />
-            <meta name="keywords" content="Ouracademy, desarrollo de software, software, ingeniería de software, educación" />
+            <meta name="description" content={description} />
             <meta name="viewport" content="width=device-width,minimum-scale=1" />
+
+            <meta property="og:type" content={og.type} />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:image" content={og.image} />
 
             <script dangerouslySetInnerHTML={{
                 __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -22,7 +35,7 @@ export default ({ title = 'Ouracademy' }) => (
             <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
             <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
             <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
-            
+
             <style>{`
                 body {
                     font-family: 'Lora', 'Times New Roman', serif;
