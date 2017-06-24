@@ -2,8 +2,7 @@ import Page from '../layouts/main'
 import Slider from '../components/slider'
 
 export default () => (
-  <Page>
-    <Page.Head title="Nosotros" />
+  <Page title="Nosotros">
     <Slider title="Nosotros" subheading="Un grupo de amigos que se divierte aprendiendo"/>
     <div className="container">
       <section title="nosotros" className="row">

@@ -5,7 +5,6 @@ import withData from '../lib/withData'
 
 export default withData(() => (
   <Page>
-    <Page.Head/>
     <Slider backgroundImage='/static/img/banner.png' />
     <PostList />
   </Page>
