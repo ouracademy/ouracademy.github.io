@@ -53,6 +53,11 @@ const PostPage = graphql(postQuery, {
     props: ({ data }) => ({ data })
 })(Post)
 
-export default withData(({ url }) => (
-    <PostPage slug={url.query.slug} />
+export default withData(({ url, serverState }) => (
+    <div>
+        {
+            serverState &&
+            <PostPage slug={url.query.slug} />
+        }
+    </div>
 ))
