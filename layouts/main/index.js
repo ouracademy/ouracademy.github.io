@@ -3,15 +3,7 @@ import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
 
-const defaultMeta = {
-    description: 'Ouracademy es una academia para aprender de ingeniería de software, desde métodos y prácticas hasta las últimas tecnologías en el desarrollo de software',
-    og: {
-        type: 'website',
-        image: 'https://scontent.flim1-2.fna.fbcdn.net/v/t1.0-9/10502476_661884230610559_1709997781224995208_n.png?oh=818b1d3b257f56e30c80bc59ed83ab0d&oe=59E52AA0'
-    }
-}
-
-export default ({ children, title = 'Ouracademy', meta = defaultMeta }) => {
+export default ({ children }) => {
     const containerId = 'GTM-K7D2R6R'
     const googleTagManagerScript = {
         top: {
@@ -29,17 +21,6 @@ export default ({ children, title = 'Ouracademy', meta = defaultMeta }) => {
     return (
         <div>
             <Head>
-                <meta charSet="utf-8" />
-                <title>{title}</title>
-                <meta name="viewport" content="width=device-width,minimum-scale=1" />
-
-                <meta name="description" content={meta.description} />
-
-                <meta property="og:type" content={meta.og.type} />
-                <meta property="og:title" content={title} />
-                <meta property="og:description" content={meta.description} />
-                <meta property="og:image" content={meta.og.image} />
-
                 <script dangerouslySetInnerHTML={googleTagManagerScript.top}></script>
 
                 <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css" />

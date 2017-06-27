@@ -1,24 +1,32 @@
+import Head from '../layouts/head'
 import Page from '../layouts/main'
 import Slider from '../components/slider'
 
-export default () => (
-  <Page title="Nosotros">
-    <Slider title="Nosotros" subheading="Un grupo de amigos que se divierte aprendiendo"/>
-    <div className="container">
-      <section title="nosotros" className="row">
-          <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+export default () => {
+  const title = "Nosotros"
+
+  return (
+    <div>
+      <Head />
+      <Page>
+        <Slider title={title} subheading="Un grupo de amigos que se divierte aprendiendo" />
+        <div className="container">
+          <section title="nosotros" className="row">
+            <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <p>Somos un grupo de amigos que queremos aprender y enseñar buenas practicas,tecnologias y teorias que involucran
                   desarrollar software.</p>
-          </div>
-      </section>
-      <section title="portfolio" className="row">
-        <PortFolio projects={getProjects()} />
-      </section>
+            </div>
+          </section>
+          <section title="portfolio" className="row">
+            <PortFolio projects={getProjects()} />
+          </section>
+        </div>
+      </Page>
     </div>
-  </Page>
-)
+  )
+}
 
-const PortFolio = ({projects}) => (
+const PortFolio = ({ projects }) => (
   <div className="portfolio">
     <h3 className="portfolio__head--primary">Nuestros Proyectos</h3>
     <div className="porfolio__content">{
@@ -67,10 +75,10 @@ const PortFolio = ({projects}) => (
 
 const getProjects = () => {
   return [
-      { name: 'Essboard', url: 'https://ouracademy.github.io/essboard/' },
-      { name: 'BIG', url: 'http://businessideasgroup.com.pe/' },
-      { name: 'Repuestop', url: 'http://repuestop.com/' },
-      { name: 'Our Template', url: 'https://templateng2.herokuapp.com/' },
-      { name: 'Sopios', url: 'http://sopios.com/' }
-    ];
+    { name: 'Essboard', url: 'https://ouracademy.github.io/essboard/' },
+    { name: 'BIG', url: 'http://businessideasgroup.com.pe/' },
+    { name: 'Repuestop', url: 'http://repuestop.com/' },
+    { name: 'Our Template', url: 'https://templateng2.herokuapp.com/' },
+    { name: 'Sopios', url: 'http://sopios.com/' }
+  ];
 }
