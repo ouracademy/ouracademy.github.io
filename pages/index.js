@@ -9,14 +9,14 @@ const Home = ({posts}) =>
     <Head />
     <Page>
       <Slider backgroundImage='/static/img/banner.png' />
-      <PostList posts={[]}/>
+      <PostList posts={posts}/>
     </Page>
   </div>
   
-/*Home.getInitialProps = async () => {
-  const res = await fetch(`http://localhost:${process.env.PORT}/static/posts.json`)
+Home.getInitialProps = async () => {
+  const res = await fetch(process.env.API_POSTS)
   const data = await res.json()
   return { posts: data.posts }
 }
-*/
+
 export default Home
