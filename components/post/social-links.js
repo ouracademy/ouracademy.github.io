@@ -19,7 +19,7 @@ export default ({ title, url }) => (
             <li>
                 <FacebookShareButton
                     url={url}
-                    title={title}>
+                    quote={title}>
                     <FacebookIcon
                         size={32}
                         round />

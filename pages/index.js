@@ -2,14 +2,21 @@ import Head from '../layouts/head'
 import Page from '../layouts/main'
 import PostList from '../components/post/list'
 import Slider from '../components/slider'
-import withData from '../lib/withData'
+import fetch from 'isomorphic-fetch'
 
-export default withData(({ serverState }) => (
+const Home = ({posts}) =>
   <div>
-    {serverState && <Head />}
+    <Head />
     <Page>
       <Slider backgroundImage='/static/img/banner.png' />
-      <PostList />
+      <PostList posts={posts}/>
     </Page>
   </div>
-))
+  
+Home.getInitialProps = async () => {
+  const res = await fetch(`http://localhost:${process.env.PORT}/static/posts.json`)
+  const data = await res.json()
+  return { posts: data.posts }
+}
+
+export default Home

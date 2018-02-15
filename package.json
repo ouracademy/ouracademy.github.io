@@ -7,7 +7,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
-    "heroku-postbuild": "heroku-nextjs-build",
+    "heroku-postbuild": "npm run build",
     "commitmsg": "validate-commit-msg"
   },
   "repository": {
@@ -21,19 +21,20 @@
     "url": "https://github.com/ouracademy/ouracademy.github.io/issues"
   },
   "homepage": "https://github.com/ouracademy/ouracademy.github.io#readme",
-  "engines": {
-    "node": "6.9.x"
-  },
   "dependencies": {
     "@mars/heroku-nextjs-build": "^2.0.0",
+    "acorn": "^5.4.1",
+    "acorn-jsx": "^4.1.1",
+    "esprima-to-value": "^1.0.5",
+    "estraverse": "^4.2.0",
     "express": "^4.15.2",
-    "graphql": "^0.9.6",
-    "next": "^2.3.1",
-    "react": "^15.5.4",
-    "react-apollo": "^1.2.0",
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.5.4",
-    "react-share": "^1.13.2"
+    "isomorphic-fetch": "^2.2.1",
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-share": "^1.19.1",
+    "react-syntax-highlighter": "^7.0.0"
   },
   "devDependencies": {
     "husky": "^0.13.3",

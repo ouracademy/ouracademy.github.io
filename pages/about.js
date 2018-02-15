@@ -75,10 +75,10 @@ const PortFolio = ({ projects }) => (
 
 const getProjects = () => {
   return [
+    { name: 'SOPIOS', url: 'http://sopios.org.pe/' },
     { name: 'Essboard', url: 'https://ouracademy.github.io/essboard/' },
     { name: 'BIG', url: 'http://businessideasgroup.com.pe/' },
     { name: 'Repuestop', url: 'http://repuestop.com/' },
     { name: 'Our Template', url: 'https://templateng2.herokuapp.com/' },
-    { name: 'Sopios', url: 'http://sopios.com/' }
   ];
 }

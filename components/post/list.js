@@ -1,14 +1,15 @@
-import { gql, graphql } from 'react-apollo'
 import Link from 'next/link'
 
-const Posts = ({posts}) => (
+const byPublishedDate = (a, b) => new Date(a.publishedAt) < new Date(b.publishedAt)
+
+export default ({posts}) => 
     <section>
         <div className="container">
             <div className="row">
                 <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     {
-                        posts.map((post) => (
-                            <div className="post-preview" key={post.id}>
+                        posts.sort(byPublishedDate).map((post) => (
+                            <div className="post-preview" key={post.slug}>
                                 <Link as={`/posts/${post.slug}`} href={`/posts?slug=${post.slug}`}>
                                     <a>
                                         <h2 className="post-title">
@@ -104,7 +105,6 @@ const Posts = ({posts}) => (
                 `}</style>
         </div>
     </section>
-)
 
 // we call use momentjs or FormatJS of React...this second will be oyr next option
 const toddmmyyyy = (stringDate) => {
@@ -113,38 +113,3 @@ const toddmmyyyy = (stringDate) => {
   
   return [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/');
 }
-
-const PostList = ({ data: { allPosts }}) => {
-    if(allPosts) {
-        return <Posts posts={allPosts} />
-    }
-    return <div>Loading</div>
-}
-
-const POSTS_PER_PAGE = 10;
-
-const allPosts = gql`
-    query allPosts($first: Int!) {
-        allPosts(orderBy: publishedAt_DESC, first: $first) {
-            id
-            title
-            slug
-            publishedAt
-            author {
-                name
-            }
-        }
-    }
-`
-
-// The `graphql` wrapper executes a GraphQL query and makes the results
-// available on the `data` prop of the wrapped component (PostList)
-export default graphql(allPosts, {
-  options: {
-    variables: {
-      first: POSTS_PER_PAGE
-    }
-  },props: ({ data }) => ({
-    data
-  })
-})(PostList)

@@ -6,13 +6,16 @@ const port = process.env.PORT || 3000
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+const writePosts = require('./file-reader')
+writePosts()
+
 app.prepare().then(() => {
   const server = express()
 
   server.get('/posts/:slug', (req, res) => {
-      const actualPage = '/posts'
-      const queryParams = { slug: req.params.slug }
-      app.render(req, res, actualPage, queryParams)
+      const actualPage = `/posts/${req.params.slug}`
+      //const queryParams = { slug: req.params.slug }
+      app.render(req, res, actualPage)//, queryParams)
   })
   
   server.get('*', (req, res) => {
