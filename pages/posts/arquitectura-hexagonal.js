@@ -18,8 +18,7 @@ export default () =>
 <p>Cree su aplicación para que funcione sin una interfaz de usuario o una base de datos de tal forma que pueda ejecutar pruebas
 de regresión automatizadas, trabajar aún cuando la base de datos no este disponible y conectar aplicaciones sin la intervención
 del usuario.</p>
-<blockquote>Una traducción del articulo de Alistair Cockburn:
-    <a href="http://alistair.cockburn.us/Hexagonal+architecture">Hexagonal Architecture</a>. Todas las gracias a él por permitirnos traducir su articulo</blockquote>
+<blockquote>Una traducción del articulo de Alistair Cockburn: <a href="http://alistair.cockburn.us/Hexagonal+architecture">Hexagonal Architecture</a>. Todas las gracias a él por permitirnos traducir su articulo</blockquote>
 <figure>
     <a href="http://alistair.cockburn.us/Hexagonal+architecture+pic+1-to-4+socket.jpg">
         <img src="http://alistair.cockburn.us/get/3005" alt="sockets: puertos y adaptadores" />
@@ -198,10 +197,10 @@ del usuario.</p>
 `import fit.ColumnFixture;
 public class TestDiscounter extends ColumnFixture 
 { 
-private Discounter app = new Discounter(); 
-public double amount;
-public double discount() 
-{ return app.discount(amount); } 
+   private Discounter app = new Discounter(); 
+   public double amount;
+   public double discount() 
+   { return app.discount(amount); } 
 }`
 }</SyntaxHighlighter>
 <p>Eso es todo para este adaptador. Hasta aquí, las pruebas se ejecutan por la línea de comandos (mira el libro FIT para el
@@ -225,10 +224,10 @@ Discounter app = new Discounter();
 public void actionPerformed(ActionEvent event) 
 {
 ...
-String amountStr = text1.getText();
-double amount = Double.parseDouble(amountStr);
-discount = app.discount(amount));
-text3.setText( "" + discount );
+    String amountStr = text1.getText();
+    double amount = Double.parseDouble(amountStr);
+    discount = app.discount(amount));
+    text3.setText( "" + discount );
 ...
 }`}</SyntaxHighlighter>
 <p>En este punto la aplicación puede ser usada en una demo y en pruebas de regresión. Ambos adaptadores del lado del usuario
@@ -240,27 +239,25 @@ text3.setText( "" + discount );
 <SyntaxHighlighter language='java' style={codeTheme}>
 {`public interface RateRepository 
 {
-double getRate(double amount);
-}
-
+   double getRate(double amount);
+ }
 public class RepositoryFactory 
 {
-public RepositoryFactory() {  super(); }
-public static RateRepository getMockRateRepository() 
-{
-  return new MockRateRepository();
+   public RepositoryFactory() {  super(); }
+   public static RateRepository getMockRateRepository() 
+   {
+      return new MockRateRepository();
+   }
 }
-}
-
 public class MockRateRepository implements RateRepository 
 {
-public double getRate(double amount) 
-{
-  if(amount <= 100) return 0.01;
-  if(amount <= 1000) return 0.02;
-  return 0.05;
-}
-}`
+   public double getRate(double amount) 
+   {
+      if(amount <= 100) return 0.01;
+      if(amount <= 1000) return 0.02;
+      return 0.05;
+    }
+ }`
 }</SyntaxHighlighter>
 <p>Para conectar este adaptador con la aplicación Discounter, necesitamos actualizar la aplicación para que acepte el adaptador
     de repositorio a usar y hacer que el adaptador del lado del usuario (FIT o UI) pase como argumento el repositorio (real
@@ -272,29 +269,29 @@ public double getRate(double amount)
 import repository.RateRepository;
 public class Discounter 
 {
-private RateRepository rateRepository;
-public Discounter(RateRepository r) 
-{
-  super();
-  rateRepository = r;
-}
-public double discount(double amount) 
-{
-  double rate = rateRepository.getRate( amount ); 
-  return amount * rate;
-}
+   private RateRepository rateRepository;
+   public Discounter(RateRepository r) 
+   {
+      super();
+      rateRepository = r;
+    }
+   public double discount(double amount) 
+   {
+      double rate = rateRepository.getRate( amount ); 
+      return amount * rate;
+    }
 }
 import app.Discounter;
 import fit.ColumnFixture;
 public class TestDiscounter extends ColumnFixture 
 {
-private Discounter app = 
-   new Discounter(RepositoryFactory.getMockRateRepository());
-public double amount;
-public double discount() 
-{
-  return app.discount( amount );
-}
+   private Discounter app = 
+       new Discounter(RepositoryFactory.getMockRateRepository());
+   public double amount;
+   public double discount() 
+   {
+      return app.discount( amount );
+   }
 }`}</SyntaxHighlighter>
 <p>Eso concluye la implementación de la versión más simple de la arquitectura hexagonal.</p>
 <p>Para una implementación diferente, usando Ruby y Rack para el uso en el navegador, mire <a href="https://github.com/totheralistair/SmallerWebHexagon">https://github.com/totheralistair/SmallerWebHexagon</a>

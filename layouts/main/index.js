@@ -45,11 +45,7 @@ export default ({ children }) => {
                     margin: 30px 0;
                     text-align: justify;
                 }
-
-                p a {
-                    text-decoration: underline;
-                }
-
+                
                 h1,
                 h2,
                 h3,
@@ -79,10 +75,20 @@ export default ({ children }) => {
                 }
 
                 figure {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 7.5%;
+                }
+                
+                figure img {
+                    max-width: 75%;
+                    margin: auto;
+                }
+                
+                figcaption {
                     text-align: center;
-                    display: table;
-                    max-width: 30%;
-                    margin: 10px auto;
+                    padding-top: 1rem;
+                    font-size: 1.4rem;
                 }
 
                 .navbar-custom {

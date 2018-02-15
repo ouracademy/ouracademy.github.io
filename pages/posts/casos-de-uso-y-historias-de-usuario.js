@@ -12,11 +12,8 @@ export default () =>
     }
   }}>
 <h1>Casos de uso y Historias de usuario</h1>
-<h2>Cual es la diferencia entre
-    <a href="https://martinfowler.com/bliki/UseCase.html">Casos de uso</a> y las
-    <a href="https://martinfowler.com/bliki/UserStory.html">Historias de Usuario</a> de XP?</h2>
-<blockquote> Traducido del articulo
-    <a href="https://martinfowler.com/bliki/UseCasesAndStories.html">UseCasesAndStories</a> de Martin Fowler </blockquote>
+<h2>Cual es la diferencia entre <a href="https://martinfowler.com/bliki/UseCase.html">Casos de uso</a> y las <a href="https://martinfowler.com/bliki/UserStory.html">Historias de Usuario</a> de XP?</h2>
+<blockquote> Traducido del articulo <a href="https://martinfowler.com/bliki/UseCasesAndStories.html">UseCasesAndStories</a> de Martin Fowler </blockquote>
 <p>Esta es una pregunta común, y no una que tiene una respuesta generalmente aceptada. Muchas personas en la comunidad de XP
     consideran que las historias son una forma simplificada de casos de uso, pero aunque solía tener la misma visión, ahora
     veo las cosas de manera diferente.</p>
@@ -33,8 +30,7 @@ export default () =>
     Debido al uso distinto de los requerimientos, las heurísticas para hacer buenos casos de uso y historias son distintas.</p>
 <figure>
     <img src="https://cdn-images-1.medium.com/max/600/1*leQKaSU-kcILOMBEtXcrBg.png" />
-    <figcaption>Una
-        <a href="http://alistair.cockburn.us/A+user+story+is+to+a+use+case+as+a+gazelle+is+to+a+gazebo">historia de usuario es a un caso de uso lo que una gacela es a un gazebo</a>, o un elefante a un elevador…</figcaption>
+    <figcaption>Una <a href="http://alistair.cockburn.us/A+user+story+is+to+a+use+case+as+a+gazelle+is+to+a+gazebo">historia de usuario es a un caso de uso lo que una gacela es a un gazebo</a>, o un elefante a un elevador…</figcaption>
 </figure>
 <p>Los dos tiene una correlación compleja. Las historias usualmente son de mayor grano fino (pequeñas) porque ellas tienen que
     ser enteramente desarrolladas (construidas) en una iteración (1 o 2 semanas en XP). Un pequeño caso de uso puede corresponder
@@ -53,11 +49,9 @@ export default () =>
     que encontré.</p>
 <h3>Donde buscar más:</h3>
 <p>
-    <a href="http://wiki.c2.com/?UserStoryAndUseCaseComparison">User Story And Use Case Comparison</a> y
-    <a href="http://wiki.c2.com/?UserStoryAndUseCaseDiscussion">User Story And Use Case Discussion</a> del wiki de C2, encontrarás discusiones de gurús del mundo ágil.</p>
+    <a href="http://wiki.c2.com/?UserStoryAndUseCaseComparison">User Story And Use Case Comparison</a> y <a href="http://wiki.c2.com/?UserStoryAndUseCaseDiscussion">User Story And Use Case Discussion</a> del wiki de C2, encontrarás discusiones de gurús del mundo ágil.</p>
 <p>
-    <a href="http://alistair.cockburn.us/A+user+story+is+to+a+use+case+as+a+gazelle+is+to+a+gazebo">A user story is to a use case as a gazelle is to a gazebo</a> y
-    <a href="http://alistair.cockburn.us/Stop+confusing+use+cases+and+user+stories">Stop confusing use cases and user stories</a> del blog de Alistair Cockburn, en ellas encontrarás que los historias de
+    <a href="http://alistair.cockburn.us/A+user+story+is+to+a+use+case+as+a+gazelle+is+to+a+gazebo">A user story is to a use case as a gazelle is to a gazebo</a> y <a href="http://alistair.cockburn.us/Stop+confusing+use+cases+and+user+stories">Stop confusing use cases and user stories</a> del blog de Alistair Cockburn, en ellas encontrarás que los historias de
     usuario y los casos de uso solo tienen en común las letras “usuario” y que tienen distintos propósitos</p>
 <p>
     <a href="https://www.scrumalliance.org/community/articles/2015/october/user-stories-vs-use-cases">User Stories Versus Use Cases</a> del blog de ScrumAlliance</p>

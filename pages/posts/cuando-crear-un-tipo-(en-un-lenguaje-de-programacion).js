@@ -11,8 +11,7 @@ export default () =>
       name: 'Arthur Mauricio Delgadillo'
     }
   }}>
-<blockquote>Una traducción al español del articulo de Martin Fowler:
-<a href="https://pdfs.semanticscholar.org/2a01/e1f14172a91215931ed787d97dee1301fe7d.pdf">When to make a Type</a>
+<blockquote>Una traducción al español del articulo de Martin Fowler: <a href="https://pdfs.semanticscholar.org/2a01/e1f14172a91215931ed787d97dee1301fe7d.pdf">When to make a Type</a>
 </blockquote>
 <p>Cuando empece a programar, empece con lenguajes muy primitivos, como Fortran 4 y con tempranos sabores de Basic. Uno de los
 primeras cosas que aprendes a usar en esos lenguajes — incluso con los lenguajes actuales (i.e., Typescript, Go, Clojure) — es
@@ -43,8 +42,7 @@ aconsejar mis libros?), mira Patterns of Enterprise Application Architecture(Add
 <figcaption>Tipos: dinero, moneda y convertidor de monedas de JScience</figcaption>
 </figure>
 <p>Lo bueno de los programas OO(Orientado a Objetos) es que fácilmente puedes definir un tipo si es que el lenguaje o las librerías
-no lo incluyen. Otros tipos de lenguajes que amenudo escribo son los rangos, porque estoy cansado de escribir
-<code>{`if (x <= top && x >= bottom)`}</code> , cantidades (para manejar cosas como “6 pies” o “2kg”), y fechas (aunque la mayoría de los lenguajes lo incluyen, usualmente
+no lo incluyen. Otros tipos de lenguajes que amenudo escribo son los rangos, porque estoy cansado de escribir <code>{`if (x <= top && x >= bottom)`}</code> , cantidades (para manejar cosas como “6 pies” o “2kg”), y fechas (aunque la mayoría de los lenguajes lo incluyen, usualmente
 son usados incorrectamente).</p>
 <figure>
 <img src="https://cdn-images-1.medium.com/max/800/1*ivaIa_kNz2zSWC1M-BfopA.gif" />
