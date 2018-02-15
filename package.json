@@ -4,8 +4,9 @@
   "description": "our webpage :)",
   "main": "index.js",
   "scripts": {
+    "dev": "node index.js && next -p $PORT",
     "build": "next build",
-    "start": "node index.js && next -p $PORT",
+    "start": "node index.js && NODE_ENV=next start -p $PORT",
     "heroku-postbuild": "next build",
     "commitmsg": "validate-commit-msg"
   },
