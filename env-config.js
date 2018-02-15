@@ -3,5 +3,5 @@ const port = process.env.PORT
 
 module.exports = {
   'process.env.API_POSTS': 
-    `${isProduction ? 'https://academyfor.us' : `http://localhost:${port}`}/static/posts.json`
+    `${isProduction ? 'https://www.academyfor.us' : `http://localhost:${port}`}/static/posts.json`
 }
