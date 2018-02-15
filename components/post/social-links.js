@@ -1,17 +1,11 @@
 import {
-    ShareButtons,
-    generateShareIcon,
-} from 'react-share';
-
-const {
-  FacebookShareButton,
+    FacebookShareButton,
     TwitterShareButton,
-    LinkedinShareButton
-} = ShareButtons;
-
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
-const LinkedinIcon = generateShareIcon('linkedin');
+    LinkedinShareButton,
+    FacebookIcon,
+    TwitterIcon,
+    LinkedinIcon
+} from 'react-share';
 
 export default ({ title, url }) => (
     <div className="share-buttons">

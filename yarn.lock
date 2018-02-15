@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"@mars/heroku-nextjs-build@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@mars/heroku-nextjs-build/-/heroku-nextjs-build-2.0.0.tgz#84d36c35b5987db93e8e6d5914d0c3bc0cb9e9fb"
-
 "@zeit/check-updates@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@zeit/check-updates/-/check-updates-1.1.0.tgz#d0f65026a36f27cd1fd54c647d8294447c1d2d8b"
@@ -3511,9 +3507,9 @@ react-prop-types@^0.4.0:
   dependencies:
     warning "^3.0.0"
 
-react-share@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/react-share/-/react-share-1.19.1.tgz#96926a4d474284e05ad851ee2ed191d0ed56e241"
+react-share@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-share/-/react-share-2.0.0.tgz#be07224dfe01ea0613e84e9412dddf0a1ed07a20"
   dependencies:
     babel-runtime "^6.6.1"
     classnames "^2.2.5"
