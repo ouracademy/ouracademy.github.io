@@ -22,21 +22,21 @@
   },
   "homepage": "https://github.com/ouracademy/ouracademy.github.io#readme",
   "dependencies": {
-    "acorn": "^5.4.1",
-    "acorn-jsx": "^4.1.1",
-    "esprima-to-value": "^1.0.5",
-    "estraverse": "^4.2.0",
-    "express": "^4.15.2",
+    "acorn": "5.4.1",
+    "acorn-jsx": "4.1.1",
+    "esprima-to-value": "1.0.5",
+    "estraverse": "4.2.0",
+    "express": "4.15.2",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^5.0.0",
-    "react": "^16.2.0",
-    "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
+    "next": "5.0.0",
+    "react": "16.2.0",
+    "react-bootstrap": "0.32.1",
+    "react-dom": "16.2.0",
     "react-share": "^2.0.0",
-    "react-syntax-highlighter": "^7.0.0"
+    "react-syntax-highlighter": "7.0.0"
   },
   "devDependencies": {
-    "husky": "^0.13.3",
-    "validate-commit-msg": "^2.12.1"
+    "husky": "0.13.3",
+    "validate-commit-msg": "2.12.1"
   }
 }
