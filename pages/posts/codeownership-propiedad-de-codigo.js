@@ -4,6 +4,7 @@ export default () =>
 <Post post={{
     slug: 'codeownership-propiedad-de-codigo',
     title: 'CodeOwnership—Propiedad de código',
+    image: 'https://cdn-images-1.medium.com/max/800/1*f0j7na4Iscep48mzTlHf1A.jpeg',
     description: 'Solo yo debo tocar el código que me asignaron? Otros también? O todo el equipo?...¿Quién tiene la propiedad del código?',
     publishedAt: '2018-02-16',
     author: {
@@ -11,7 +12,14 @@ export default () =>
     }
 }}>
 <h1>CodeOwnership—Propiedad de código</h1>
-<blockquote>Una traducción del articulo <Link to="https://martinfowler.com/bliki/CodeOwnership.html">Code Ownership</Link> de Martin Fowler</blockquote>
+<blockquote>
+    <p>Solo yo debo tocar el código que me asignaron? Otros también? O todo el equipo?…¿Quién tiene la propiedad del código?</p>
+    <p>Una traducción del articulo <Link to="https://martinfowler.com/bliki/CodeOwnership.html">Code Ownership</Link> de Martin Fowler</p>
+</blockquote>
+<figure>
+    <img src="https://cdn-images-1.medium.com/max/800/1*f0j7na4Iscep48mzTlHf1A.jpeg"/>
+    <figcaption>El código es solo mio? Nadie lo puede tocar…</figcaption>
+</figure>
 <p>Hay varios formas de <strong>propiedad del código</strong> que he visto.
 En general, las clasificó en tres grandes categorías:</p>
 <ul>
