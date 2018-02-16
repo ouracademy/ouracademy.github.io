@@ -7,7 +7,7 @@ import {
     LinkedinIcon
 } from 'react-share';
 
-export default ({ title, url }) => (
+export default ({ title, url, description }) => (
     <div className="share-buttons">
         <ul className="text-center">
             <li>
@@ -33,6 +33,7 @@ export default ({ title, url }) => (
                 <LinkedinShareButton
                     url={url}
                     title={title}
+                    description={description}
                     windowWidth={750}
                     windowHeight={600}
                     className="Demo__some-network__share-button">
