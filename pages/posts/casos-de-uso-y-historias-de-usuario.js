@@ -10,7 +10,6 @@ export default () =>
       name: 'Arthur Mauricio Delgadillo'
     }
   }}>
-<h1>Casos de uso y Historias de usuario</h1>
 <h2>Cual es la diferencia entre <a href="https://martinfowler.com/bliki/UseCase.html">Casos de uso</a> y las <a href="https://martinfowler.com/bliki/UserStory.html">Historias de Usuario</a> de XP?</h2>
 <blockquote> Traducido del articulo <a href="https://martinfowler.com/bliki/UseCasesAndStories.html">UseCasesAndStories</a> de Martin Fowler </blockquote>
 <p>Esta es una pregunta común, y no una que tiene una respuesta generalmente aceptada. Muchas personas en la comunidad de XP

@@ -10,7 +10,6 @@ export default () =>
       name: 'Diana Quintanilla'
     }
 }}>
-<h1>CodeOwnership—Propiedad de código</h1>
 <blockquote>
     <p>Solo yo debo tocar el código que me asignaron? Otros también? O todo el equipo?…¿Quién tiene la propiedad del código?</p>
     <p>Una traducción del articulo <Link to="https://martinfowler.com/bliki/CodeOwnership.html">Code Ownership</Link> de Martin Fowler</p>

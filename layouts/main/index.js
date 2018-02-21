@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
 
-export default ({ children }) => {
+export default ({ children, slider }) => {
     const containerId = 'GTM-K7D2R6R'
     const googleTagManagerScript = {
         top: {
@@ -17,6 +17,7 @@ export default ({ children }) => {
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${containerId}" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`
         }
     }
+    const hasSlider = slider !== undefined;
 
     return (
         <div>
@@ -29,15 +30,17 @@ export default ({ children }) => {
                 <script async src="https://use.fontawesome.com/56590024a3.js"></script>
             </Head>
             <noscript dangerouslySetInnerHTML={googleTagManagerScript.bottom} />
-            <Header />
-            <main>{children}</main>
+            <Header absolute={hasSlider}/>
+            <main>
+                {hasSlider && slider}
+                {children}
+            </main>
             <Footer />
             <style jsx global>{`
                 body {
                     font-family: 'Lora', 'Times New Roman', serif;
                     font-size: 20px;
                     color: #333333;
-                    -webkit-tap-highlight-color: #25949f;
                 }
 
                 p {
@@ -90,14 +93,23 @@ export default ({ children }) => {
                     padding-top: 1rem;
                     font-size: 1.4rem;
                 }
-
+                
+                .navbar {
+                    border-radius: 0;
+                    margin-bottom: 0;
+                    border: 0;
+                }
+                
                 .navbar-custom {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    z-index: 3;
                     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    background-color: #5d5f60;
+                    border-bottom: 1px solid transparent;
+                }
+                
+                .navbar-custom.absolute {
+                    position: absolute;
+                    width: 100%;
+                    background-color: transparent;
                 }
 
                 .navbar-custom .navbar-brand {
@@ -119,10 +131,6 @@ export default ({ children }) => {
                 }
 
                 @media only screen and (min-width: 768px) {
-                    .navbar-custom {
-                        background: transparent;
-                        border-bottom: 1px solid transparent;
-                    }
                     .navbar-custom .navbar-brand {
                         color: white;
                         padding: 20px;
@@ -146,46 +154,8 @@ export default ({ children }) => {
                         -webkit-transition: background-color 0.3s;
                         -moz-transition: background-color 0.3s;
                         transition: background-color 0.3s;
-                        /* Force Hardware Acceleration in WebKit */
-                        -webkit-transform: translate3d(0, 0, 0);
-                        -moz-transform: translate3d(0, 0, 0);
-                        -ms-transform: translate3d(0, 0, 0);
-                        -o-transform: translate3d(0, 0, 0);
                         transform: translate3d(0, 0, 0);
-                        -webkit-backface-visibility: hidden;
                         backface-visibility: hidden;
-                    }
-                    .navbar-custom.is-fixed {
-                        /* when the user scrolls down, we hide the header right above the viewport */
-                        position: fixed;
-                        top: -61px;
-                        background-color: rgba(255, 255, 255, 0.9);
-                        border-bottom: 1px solid #f2f2f2;
-                        -webkit-transition: -webkit-transform 0.3s;
-                        -moz-transition: -moz-transform 0.3s;
-                        transition: transform 0.3s;
-                    }
-                    .navbar-custom.is-fixed .navbar-brand {
-                        color: #333333;
-                    }
-                    .navbar-custom.is-fixed .navbar-brand:hover,
-                    .navbar-custom.is-fixed .navbar-brand:focus {
-                        color: #25949f;
-                    }
-                    .navbar-custom.is-fixed .nav li a {
-                        color: #333333;
-                    }
-                    .navbar-custom.is-fixed .nav li a:hover,
-                    .navbar-custom.is-fixed .nav li a:focus {
-                        color: #25949f;
-                    }
-                    .navbar-custom.is-visible {
-                        /* if the user changes the scrolling direction, we show the header */
-                        -webkit-transform: translate3d(0, 100%, 0);
-                        -moz-transform: translate3d(0, 100%, 0);
-                        -ms-transform: translate3d(0, 100%, 0);
-                        -o-transform: translate3d(0, 100%, 0);
-                        transform: translate3d(0, 100%, 0);
                     }
                 }
 
@@ -210,13 +180,7 @@ export default ({ children }) => {
                     border: 1px solid #25949f;
                     color: white;
                 }
-
-                ::-moz-selection {
-                    color: white;
-                    text-shadow: none;
-                    background: #25949f;
-                }
-
+                
                 ::selection {
                     color: white;
                     text-shadow: none;
@@ -224,11 +188,6 @@ export default ({ children }) => {
                 }
 
                 img::selection {
-                    color: white;
-                    background: transparent;
-                }
-
-                img::-moz-selection {
                     color: white;
                     background: transparent;
                 }

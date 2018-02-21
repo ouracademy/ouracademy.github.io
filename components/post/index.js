@@ -13,16 +13,17 @@ export default ({ post, children }) =>
         }
     }} />
     <div>
-        <Slider title={post.title} />
-       <article>
+        <article>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-2 col-md-1">
                         <SocialLinks 
-                            title={post.title} url={`http://www.academyfor.us/post/${post.slug}`}
+                            title={post.title}
+                            url='https://www.academyfor.us'
                             description={post.description}/>
                     </div>
                     <div className="col-lg-8 col-md-10">
+                        <h1>{post.title}</h1>
                         {children}
                     </div>
                 </div>
@@ -31,6 +32,10 @@ export default ({ post, children }) =>
     </div>
     <style jsx global>{`
     
+        article {
+            padding-top: 5vh;
+        }
+        
         article a {
             text-decoration: underline;
         }

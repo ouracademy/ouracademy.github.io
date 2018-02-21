@@ -10,7 +10,6 @@ export default () =>
       name: 'Arthur Mauricio Delgadillo'
     }
   }}>
-  <h1>Bolsa de 5 libras</h1>
   <p><strong>o los problemas de tener un plan fijo y como lidiar con ello</strong></p>
   <p>Una traducción del articulo de Martin Fowler: <a href="https://martinfowler.com/bliki/FivePoundBag.html">When to make a Type</a></p>
   <blockquote>

@@ -7,8 +7,7 @@ import fetch from 'isomorphic-fetch'
 const Home = ({posts}) =>
   <div>
     <Head />
-    <Page>
-      <Slider backgroundImage='/static/img/banner.png' />
+    <Page slider={<Slider backgroundImage='/static/img/banner.png' />}>
       <PostList posts={posts}/>
     </Page>
   </div>
