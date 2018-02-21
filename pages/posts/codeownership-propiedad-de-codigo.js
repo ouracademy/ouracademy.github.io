@@ -2,7 +2,6 @@ import Post from '../../components/post'
 
 export default () => 
 <Post post={{
-    slug: 'codeownership-propiedad-de-codigo',
     title: 'CodeOwnership—Propiedad de código',
     image: 'https://cdn-images-1.medium.com/max/800/1*f0j7na4Iscep48mzTlHf1A.jpeg',
     description: 'Solo yo debo tocar el código que me asignaron? Otros también? O todo el equipo?...¿Quién tiene la propiedad del código?',

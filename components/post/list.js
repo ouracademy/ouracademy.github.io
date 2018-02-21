@@ -9,8 +9,8 @@ export default ({posts}) =>
                 <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     {
                         posts.sort(byPublishedDate).map((post) => (
-                            <div className="post-preview" key={post.slug}>
-                                <Link href={`/posts/${post.slug}`}>
+                            <div className="post-preview" key={post.path}>
+                                <Link href={`/posts/${post.path}`}>
                                     <a>
                                         <h2 className="post-title">
                                             {post.title}

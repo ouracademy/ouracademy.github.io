@@ -2,7 +2,6 @@ import Post from '../../components/post'
 
 export default () => 
 <Post post={{
-    slug: 'quien-necesita-a-un-arquitecto',
     title: 'Quien necesita a un arquitecto?',
     publishedAt: '2017-02-15',
     author: {

@@ -7,7 +7,11 @@ const postPath = path.join(__dirname, 'pages', 'posts')
 const posts = 
   readdirSync(postPath)
     .map(fileName => 
-        extractPost(readFileSync(path.join(postPath, fileName), 'utf-8')))
+        Object.assign(
+          extractPost(readFileSync(path.join(postPath, fileName), 'utf-8')),
+          {path: path.parse(fileName).name}
+        )
+    )
 
 module.exports = () => writeFile(path.join(__dirname, 'static', 'posts.json'), JSON.stringify({posts}), 'utf8', () => {});
 

@@ -2,7 +2,6 @@ import Post from '../../components/post'
 
 export default () => 
 <Post post={{
-    slug: 'cuando-crear-un-tipo-(en-un-lenguaje-de-programacion)',
     title: 'Cuando crear un Tipo (en un lenguaje de programación)?',
     image: 'https://cdn-images-1.medium.com/max/800/1*CwKEGUfjnBNyAYNySLJHLw.png',
     description: 'Una traducción del articulo de Martin Fowler: When to make a Type',

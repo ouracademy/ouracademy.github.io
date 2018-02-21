@@ -2,7 +2,6 @@ import Post from '../../components/post'
 
 export default () => 
 <Post post={{
-    slug: 'bolsa-de-5-libras',
     title: 'Bolsa de 5 libras',
     image: 'https://cdn-images-1.medium.com/max/800/1*lJX-9L6dsEwymTKTR2JqQg.png',
     description: 'Los problemas de tener un plan fijo y como lidiar con ello',

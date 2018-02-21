@@ -2,7 +2,6 @@ import Post from '../../components/post'
 
 export default () => 
 <Post post={{
-    slug: 'casos-de-uso-y-historias-de-usuario',
     title: 'Casos de uso y Historias de usuario',
     image: 'https://cdn-images-1.medium.com/max/600/1*leQKaSU-kcILOMBEtXcrBg.png',
     description: 'Cual es la diferencia entre Casos de uso y las Historias de Usuario de Extreme Programming (XP)?',
