@@ -1,8 +1,5 @@
 import Post from '../../components/post'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { github } from 'react-syntax-highlighter/styles/hljs'
-
-const codeTheme = github
+import Code from '../../components/code'
 
 export default () => 
 <Post post={{
@@ -192,7 +189,7 @@ del usuario.</p>
 <p>Note que los nombres de las columnas serán los nombres de las clases y funciones en nuestro programa. FIT contiene formas
     para alejarse de esta forma “programadora“ (escribir como código), pero para este artículo es más fácil dejarlo así.</p>
 <p>Sabiendo cuales serán los datos de prueba, crearemos el adaptador del lado del usuario, usando el ColumnFixture de FIT:</p>
-<SyntaxHighlighter language='java' style={codeTheme}>{
+<Code language='java'>{
 `import fit.ColumnFixture;
 public class TestDiscounter extends ColumnFixture 
 { 
@@ -201,15 +198,15 @@ public class TestDiscounter extends ColumnFixture
    public double discount() 
    { return app.discount(amount); } 
 }`
-}</SyntaxHighlighter>
+}</Code>
 <p>Eso es todo para este adaptador. Hasta aquí, las pruebas se ejecutan por la línea de comandos (mira el libro FIT para el
     path que necesitarás). Usaremos este:</p>
-<SyntaxHighlighter language='dos' style={codeTheme}>
+<Code language='dos'>
 {
 `set FIT_HOME=/FIT/FitLibraryForFit15Feb2005
 java -cp %FIT_HOME%/lib/javaFit1.1b.jar;%FIT_HOME%/dist/fitLibraryForFit.jar;src;bin
 fit.FileRunner test/Discounter.html TestDiscount_Output.html`
-}</SyntaxHighlighter>
+}</Code>
 <p>FIT produce un archivo de salida con colores que nos muestran que paso(o que fallo, en caso que hallamos hecho un error de
     ortografía — typo —  en algún lugar).</p>
 <p>En este punto el código está listo para ser registrado, integrado a Cruise Control o cualquier máquina de construcción (build)
@@ -217,7 +214,7 @@ fit.FileRunner test/Discounter.html TestDiscount_Output.html`
 <h3>Etapa 2: Aplicación UI con constante como base de datos</h3>
 <p>Voy a dejar que crees tu propio UI y que esta conduzca (use) a la aplicación Discounter (de descuentos), dado que el código
     es un poco largo para incluirlo aquí. Algunas lineas clave en el código son estás:</p>
-<SyntaxHighlighter language='java' style={codeTheme}>{
+<Code language='java'>{
 `...
 Discounter app = new Discounter();
 public void actionPerformed(ActionEvent event) 
@@ -228,14 +225,14 @@ public void actionPerformed(ActionEvent event)
     discount = app.discount(amount));
     text3.setText( "" + discount );
 ...
-}`}</SyntaxHighlighter>
+}`}</Code>
 <p>En este punto la aplicación puede ser usada en una demo y en pruebas de regresión. Ambos adaptadores del lado del usuario
     funcionan y pueden ser ejecutados.</p>
 <h3>Etapa 3: Aplicación (FIT o UI) con base de datos mock</h3>
 <p>Para crear un adaptador reemplazable para el lado de la base de datos, crearemos: una “interfaz” al repositorio, un “RepositoryFactory”
     (fábrica de repositorios, vea el patrón Factory) que producirá bien la base de datos mock o la real y el mock en memoria
     para la base de datos.</p>
-<SyntaxHighlighter language='java' style={codeTheme}>
+<Code language='java'>
 {`public interface RateRepository 
 {
    double getRate(double amount);
@@ -257,13 +254,13 @@ public class MockRateRepository implements RateRepository
       return 0.05;
     }
  }`
-}</SyntaxHighlighter>
+}</Code>
 <p>Para conectar este adaptador con la aplicación Discounter, necesitamos actualizar la aplicación para que acepte el adaptador
     de repositorio a usar y hacer que el adaptador del lado del usuario (FIT o UI) pase como argumento el repositorio (real
     o mock) al constructor de la aplicación en sí (Discounter). Aquí les muestro la aplicación actualizada y el adaptador
     para FIT que pasa como argumento un repositorio mock (el código del adaptador FIT a escoger al pasar el adaptador del
     repositorio mock o el real es grande y no agrega mucha nueva información, así que omito esa versión aquí).</p>
-<SyntaxHighlighter language='java' style={codeTheme}>
+<Code language='java'>
 {`import repository.RepositoryFactory;
 import repository.RateRepository;
 public class Discounter 
@@ -291,7 +288,7 @@ public class TestDiscounter extends ColumnFixture
    {
       return app.discount( amount );
    }
-}`}</SyntaxHighlighter>
+}`}</Code>
 <p>Eso concluye la implementación de la versión más simple de la arquitectura hexagonal.</p>
 <p>Para una implementación diferente, usando Ruby y Rack para el uso en el navegador, mire <a href="https://github.com/totheralistair/SmallerWebHexagon">https://github.com/totheralistair/SmallerWebHexagon</a>
 </p>
