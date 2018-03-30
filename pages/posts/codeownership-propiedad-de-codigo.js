@@ -1,4 +1,5 @@
 import Post from '../../components/post'
+import Link from '../../components/link'
 
 export default () => 
 <Post post={{
@@ -72,6 +73,3 @@ En general, las clasificó en tres grandes categorías:</p>
    contexto de la Programación Extrema.
 </p>
 </Post>
-
-const Link = ({to, children}) => 
-    (<a href={to} target="__blank">{children}</a>)
