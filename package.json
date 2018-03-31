@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node index.js && next -p $PORT",
+    "test": "NODE_ENV=test jest",
     "build": "next build",
     "start": "node index.js && next start -p $PORT",
     "heroku-postbuild": "next build",
@@ -28,7 +29,7 @@
     "esprima-to-value": "^1.0.5",
     "estraverse": "^4.2.0",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^4.1.4",
+    "next": "latest",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
@@ -36,7 +37,12 @@
     "react-syntax-highlighter": "^7.0.0"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.13.3",
+    "jest": "^22.4.3",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.3.0",
     "validate-commit-msg": "^2.12.1"
   }
 }
