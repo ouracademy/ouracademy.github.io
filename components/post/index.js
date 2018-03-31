@@ -19,7 +19,6 @@ export default ({ post, children }) =>
                     <div className="col-lg-2 col-md-1">
                         <SocialLinks 
                             title={post.title}
-                            url='https://www.academyfor.us'
                             description={post.description}/>
                     </div>
                     <div className="col-lg-8 col-md-10">

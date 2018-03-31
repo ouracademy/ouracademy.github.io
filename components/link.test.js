@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import Link from '../components/link'
+import Link from './link'
 
 describe('Link', () => {
   it('should render children', () => {

@@ -1,3 +1,4 @@
+import { withRouter } from 'next/router'
 import {
     FacebookShareButton,
     TwitterShareButton,
@@ -5,63 +6,73 @@ import {
     FacebookIcon,
     TwitterIcon,
     LinkedinIcon
-} from 'react-share';
+} from 'react-share'
 
-export default ({ title, url, description }) => (
-    <div className="share-buttons">
-        <ul className="text-center">
-            <li>
-                <FacebookShareButton
-                    url={url}
-                    quote={title}>
-                    <FacebookIcon
-                        size={32}
-                        round />
-                </FacebookShareButton>
-            </li>
-            <li>
-                <TwitterShareButton
-                    url={url}
-                    title={title}
-                    className="Demo__some-network__share-button">
-                    <TwitterIcon
-                        size={32}
-                        round />
-                </TwitterShareButton>
-            </li>
-            <li>
-                <LinkedinShareButton
-                    url={url}
-                    title={title}
-                    description={description}
-                    windowWidth={750}
-                    windowHeight={600}
-                    className="Demo__some-network__share-button">
-                    <LinkedinIcon
-                        size={32}
-                        round />
-                </LinkedinShareButton>
-            </li>
-        </ul>
-        <style jsx>{`
-            .share-buttons {
-                display: none;
-            }
-
-            @media only screen and (min-width: 768px) {
-                .share-buttons {
-                    display: inherit;
-                }
-                .share-buttons ul {
+export const SocialLinks = ({ title, description, router }) => {
+    const url=`https://www.academyfor.us${router.asPath}`;
+    
+    return (
+        <div className="social-links">
+            <ul className="text-center">
+                <li>
+                    <FacebookShareButton
+                        url={url}
+                        quote={title}
+                        className="shared-button">
+                        <FacebookIcon
+                            size={32}
+                            round />
+                    </FacebookShareButton>
+                </li>
+                <li>
+                    <TwitterShareButton
+                        url={url}
+                        title={title}
+                        className="shared-button">
+                        <TwitterIcon
+                            size={32}
+                            round />
+                    </TwitterShareButton>
+                </li>
+                <li>
+                    <LinkedinShareButton
+                        url={url}
+                        title={title}
+                        description={description}
+                        windowWidth={750}
+                        windowHeight={600}
+                        className="shared-button">
+                        <LinkedinIcon
+                            size={32}
+                            round />
+                    </LinkedinShareButton>
+                </li>
+            </ul>
+            
+            <style jsx>{`
+                div ul {
                     margin-top: 45px;
                     list-style: none;
                     list-style-image: none;
                 }
-
-                .share-buttons ul li {
+                
+                .shared-button {
                     margin-top: 10px;
                 }
-            }
+                
+                .social-links {
+                    display: none;
+                }
+                @media only screen and (min-width: 768px) {
+                    .social-links {
+                        display: inherit;
+                    }
+                }
+                
             `}</style>
-    </div>
-)
+        </div>
+    )
+}
+
+
+export default withRouter(SocialLinks)
