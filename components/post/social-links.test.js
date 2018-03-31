@@ -1,30 +1,26 @@
 import { shallow } from 'enzyme'
-import renderer from 'react-test-renderer'
 
-import { SocialLinks } from './social-links'
+import SocialLinks from './social-links'
 import {
     FacebookShareButton,
     TwitterShareButton,
-    LinkedinShareButton,
-    FacebookIcon,
-    TwitterIcon,
-    LinkedinIcon
+    LinkedinShareButton
 } from 'react-share'
 
 describe('SocialLinks', () => {
   it('should contains a facebook, twitter and linkedin share buttons', () => {
     const post = {
         title: 'Some post',
-        description: 'some description',
-        path: '/some-post'
+        description: 'some description'
     }
+    const url = `https://www.academyfor.us/some-post`
+    
     const wrapper = shallow(<SocialLinks 
                             title={post.title}
                             description={post.description}
-                            router={{asPath: post.path} }
+                            url={url}
                             />)
     
-    const url = `https://www.academyfor.us${post.path}`
     const facebookShareButton = wrapper.find(FacebookShareButton)
     expect(facebookShareButton).toHaveLength(1)
     expect(facebookShareButton.props().url).toBe(url)
