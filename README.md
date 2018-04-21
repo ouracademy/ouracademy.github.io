@@ -1,8 +1,8 @@
 # Ouracademy 
 > 
-Ouracademy is an organization that promoves the education in software development throught blog posts & videos.
+Ouracademy is an organization that promoves the education in software development throught blog posts & videos 😃.
 
-Our web page is built with Next.js & Apollo (a graphql client for React)
+Our web page is built with Next.js & Apollo (a Graphql client for React)
 
 ## Installation
 
