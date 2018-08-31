@@ -20,11 +20,11 @@ en un punto un participante exclamo: "¿Esto es análisis o diseño—de todos m
 cuál es la diferencia?" Es una pregunta difícil, una que me molesta a menudo, y
 siempre es una buena candidata para una flameada guerra en <Link to="https://groups.google.com/forum/#!forum/comp.object">
 comp.object</Link>.</p>
-<p>Las personas imaginan que es fácil decirle construir un sistema de computación.
+<p>Las personas imaginan que es fácil construir un sistema de computación.
 Buscas un programador, le dices que es lo que quieres, sales un rato,
 traes unas pizzas, y ya está construido. Aunque como todos sabemos, es diabólicamente 
-difícil hacerlo 😢, a excepción del sistema más pequeño. Para empezar
-hay mucho que decir, simplemente escribirlo todo de por sí, es un ejercicio largo,
+difícil hacerlo 😢 - a excepción de un sistema muy pequeño. Para empezar
+hay mucho que decir, simplemente escribirlo todo, de por sí, es un ejercicio largo,
 de ahí el término <em>Especificación de Novela Victoriana</em> - escribir miles
 de lineas de código. El otro problema incómodo es que las personas te diran lo 
 que <em>quieren</em>, pero en realidad debes construirles lo que ellos <em>necesitan</em>—no necesariamente son lo mismo.</p>
