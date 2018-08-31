@@ -1,4 +1,4 @@
-import Post from '../../components/post'
+import Post, { Image } from '../../components/post'
 import Code from '../../components/code'
 
 export default () => 
@@ -17,7 +17,7 @@ del usuario.</p>
 <blockquote>Una traducción del articulo de Alistair Cockburn: <a href="http://alistair.cockburn.us/Hexagonal+architecture">Hexagonal Architecture</a>. Todas las gracias a él por permitirnos traducir su articulo</blockquote>
 <figure>
     <a href="http://alistair.cockburn.us/Hexagonal+architecture+pic+1-to-4+socket.jpg">
-        <img src="http://alistair.cockburn.us/get/3005" alt="sockets: puertos y adaptadores" />
+        <Image src="ports-and-adapters" alt="sockets: puertos y adaptadores" />
     </a>
 </figure>
 <h1>El patrón: Puertos y Adaptadores (‘’objeto- estructural’’)</h1>
@@ -32,7 +32,7 @@ del usuario.</p>
     receptora (humana o automatizada). La aplicación tiene una interacción semántica con los adaptadores de todos sus lados,
     sin saber realmente la naturaleza de las cosas del otro lado de los adaptadores.</p>
 <figure>
-    <img src="http://alistair.cockburn.us/get/2301" alt="arquitectura hexagonal básica" />
+    <Image src="hexagonal-fig1" alt="arquitectura hexagonal básica" />
     <figcaption>Figura 1</figcaption>
 </figure>
 <h2>Motivación</h2>
@@ -123,7 +123,7 @@ del usuario.</p>
     desde la perspectiva de la aplicación.</p>
 <h2>Estructura</h2>
 <figure>
-    <img src="http://alistair.cockburn.us/get/2302" alt="arquitectura hexagonal con adaptadores" />
+    <Image src="hexagonal-fig2" alt="arquitectura hexagonal con adaptadores" />
     <figcaption>Figura 2 </figcaption>
 </figure>
 <p>La Figura 2 muestra una aplicación que tiene 2 puertos activos y muchos adaptadores para cada puerto. Los 2 puertos son el
@@ -134,7 +134,7 @@ del usuario.</p>
     bajo la base de datos de pruebas o producción. La especificación funcional de la aplicación, quizá en Casos de Uso, es
     hecha bajo la interfaz del hexágono interno y no en cambio en cualquier tecnología externa que podría ser usada.</p>
 <figure>
-    <img src="http://alistair.cockburn.us/get/2303" alt="arquitectura hexagonal vista como capas" />
+    <Image src="hexagonal-fig3" alt="arquitectura hexagonal vista como capas" />
     <figcaption>Figura 3</figcaption>
 </figure>
 <p>La Figura 3 muestra la misma aplicación puesta en un esquema de una arquitectura en 3 capas. Para simplificar el esquema
@@ -339,7 +339,7 @@ public class TestDiscounter extends ColumnFixture
     Aún así prefiero escoger un número pequeño de puertos: 2,3 o 4, como se describió antes y en Usos conocidos.</p>
 <h2>Usos conocidos</h2>
 <figure>
-    <img src="http://alistair.cockburn.us/get/2304" alt="ejemplo complejo de arquitectura hexagonal" />
+    <Image src="hexagonal-fig4.png" alt="ejemplo complejo de arquitectura hexagonal" />
     <figcaption>Figura 4</figcaption>
 </figure>
 <p>La Figura 4 muestra una aplicación con cuatro puertos y muchos adaptadores para cada puerto. Esta fue derivada de una aplicación

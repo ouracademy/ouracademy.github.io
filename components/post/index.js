@@ -5,6 +5,8 @@ import Slider from '../slider'
 import SocialLinks from './social-links'
 import { DiscussionEmbed } from 'disqus-react'
 
+import { Image as CloudinaryImage } from 'cloudinary-react'
+
 const disqusShortname = 'academyforus'
 
 export const Article = ({ post, children, router }) => {
@@ -69,3 +71,7 @@ export const Article = ({ post, children, router }) => {
 }
 
 export default withRouter(Article)
+
+
+export const Image = ({ src, ...rest }) => 
+    (<CloudinaryImage cloudName="our-academy" publicId={`articles/${src}`} {...rest} />)
