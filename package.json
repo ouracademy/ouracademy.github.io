@@ -4,7 +4,8 @@
   "description": "our webpage :)",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js && next -p $PORT",
+    "dev": "node index.js && next",
+    "debug": "node index.js && next --inspect",
     "test": "NODE_ENV=test jest",
     "build": "next build",
     "start": "node index.js && next start -p $PORT",
