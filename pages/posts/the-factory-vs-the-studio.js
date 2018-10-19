@@ -8,6 +8,7 @@ export default () => (
     description="¿Cuántos de nosotros hemos trabajado en una &quot;fábrica&quot; de software?, este término &quot;fábrica&quot; quizá sea un malentendido."
     publishedAt="2018-09-09"
     author="@arthur"
+    tags={['proceso', 'agil', 'formas-de-ver']}
   >
     <blockquote>
       Una traducción del articulo{' '}

@@ -8,6 +8,7 @@ export default () => (
     description="Una historia de patrones de testing: mock, stub, dummy, fake, spy...Una traducción del articulo The Little Mocker"
     publishedAt="2018-02-23"
     author="@arthur"
+    tags={['diseño', 'patron', 'testing']}
   >
     <blockquote>
       Una traducción del articulo de Robert C. Martin - aka Uncle Bob:{' '}

@@ -8,6 +8,7 @@ export default () => (
     description="Solo yo debo tocar el código que me asignaron? Otros también? O todo el equipo?...¿Quién tiene la propiedad del código?"
     publishedAt="2018-02-16"
     author="@diana"
+    tags={['agil', 'equipo', 'codigo']}
   >
     <blockquote>
       <p>

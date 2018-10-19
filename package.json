@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/ouracademy/ouracademy.github.io#readme",
   "dependencies": {
-    "acorn": "^5.4.1",                                                                                                        
+    "acorn": "^5.4.1",
     "acorn-jsx": "^4.1.1",
     "babel-plugin-transform-define": "^1.3.0",
     "cloudinary-react": "^1.0.6",

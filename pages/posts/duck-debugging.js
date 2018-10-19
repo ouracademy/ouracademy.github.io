@@ -8,6 +8,7 @@ export default () => (
     description="Alguna vez te haz estancado en un problema y, para resolverlo, empiezas a hablarte a ti mismo, o a un patito de goma en tu escritorio?"
     publishedAt="2018-08-31"
     author="@arthur"
+    tags={['patron', 'practica', 'proceso', 'debug', 'codigo']}
   >
     <blockquote>
       Una traducción del articulo{' '}

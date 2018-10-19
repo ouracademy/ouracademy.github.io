@@ -7,6 +7,7 @@ export default () => (
     description="Los problemas de tener un plan fijo y como lidiar con ello"
     publishedAt="2018-02-15"
     author="@arthur"
+    tags={['planeacion', 'agil']}
   >
     <p>
       <strong>

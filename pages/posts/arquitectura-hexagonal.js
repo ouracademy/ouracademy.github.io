@@ -8,7 +8,7 @@ export default () => (
     description="Cree su aplicación para que funcione sin una interfaz de usuario o una base de datos de tal forma que pueda ejecutar pruebas de regresión automatizadas, trabajar aún cuando la base de datos no este disponible y conectar aplicaciones sin la intervención del usuario."
     publishedAt="2017-05-21"
     author="@arthur"
-    tags={  ['arquitectura', 'patron', 'testing'] }
+    tags={['arquitectura', 'patron', 'testing']}
   >
     <p>
       Cree su aplicación para que funcione sin una interfaz de usuario o una

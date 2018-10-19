@@ -11,21 +11,27 @@ export default ({ posts }) => (
         <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           {posts.map(post => (
             <div className="post-preview" key={post.path}>
+              <p className="tags"><i className="fa fa fa-tags"></i> {post.tags.join(', ')}</p>
               <Link href={`/posts/${post.path}`}>
                 <a>
                   <h2 className="post-title">{post.title}</h2>
                 </a>
               </Link>
-              <p className="post-meta">
-                Por {getAuthor(post).name} el{' '}
-                {format(post.publishedAt, 'DD/MM/YYYY')}
-              </p>
+              <div className="post-meta">
+                <p>{format(post.publishedAt, 'DD MMM YYYY')} | {getAuthor(post).name}</p>
+                <p>{post.description}</p>
+              </div>
               <hr />
             </div>
           ))}
         </div>
       </div>
       <style jsx>{`
+        .tags {
+          margin: 0;
+          font-size: 0.85em;
+        }
+      
         .post-preview a {
           color: #333333;
         }
@@ -38,7 +44,7 @@ export default ({ posts }) => (
 
         .post-preview a .post-title {
           font-size: 30px;
-          margin-top: 30px;
+          margin-top: 12px;
           margin-bottom: 10px;
         }
 

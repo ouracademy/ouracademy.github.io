@@ -19,7 +19,13 @@ module.exports = content => {
     }
   })
 
+  
   return reactArrowFunction.body.openingElement.attributes.reduce(
-    (ac, node) => ({...ac, [node.name.name]: node.value.value }), {}
+    (ac, node) => {
+      const value = node.value
+      return {...ac, [node.name.name]: value.hasOwnProperty('value')? value.value : toArray(value.expression) }
+    }, {}
   )
 }
+
+const toArray = expression => expression.elements.map(node => node.value)

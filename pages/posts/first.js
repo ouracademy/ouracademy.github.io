@@ -6,6 +6,7 @@ export default () => (
     description="¿Por que las pruebas de software son lo primero?"
     publishedAt="2018-02-21"
     author="@arthur"
+    tags={['practica', 'testing']}
   >
     <p>
       <strong>¿Por que las pruebas son lo primero?</strong>

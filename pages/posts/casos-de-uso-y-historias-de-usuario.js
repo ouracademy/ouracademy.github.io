@@ -7,6 +7,7 @@ export default () => (
     description="Cual es la diferencia entre Casos de uso y las Historias de Usuario de Extreme Programming (XP)?"
     publishedAt="2017-08-19"
     author="@arthur"
+    tags={['agil', 'requerimientos']}
   >
     <h2>
       Cual es la diferencia entre{' '}

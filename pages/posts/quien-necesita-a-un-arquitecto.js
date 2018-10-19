@@ -7,6 +7,7 @@ export default () => (
     image="https://cdn-images-1.medium.com/max/800/1*QcyEoP1TzICT3qz88NeO5Q.png"
     description="Una traducción del articulo de Martin Fowler: Who needs an architect?"
     author="@arthur"
+    tags={['arquitectura', 'codigo', 'testing', 'formas-de-ver']}
   >
     <p>
       Una traducción del farticulo de Martin Fowler:{' '}

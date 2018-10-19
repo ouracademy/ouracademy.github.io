@@ -7,6 +7,7 @@ export default () => (
     description="Una traducción del articulo de Martin Fowler: When to make a Type"
     publishedAt="2017-02-21"
     author="@arthur"
+    tags={['codigo', 'objetos', 'diseño']}
   >
     <blockquote>
       Una traducción al español del articulo de Martin Fowler:{' '}

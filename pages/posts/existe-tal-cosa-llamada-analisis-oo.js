@@ -7,6 +7,7 @@ export default () => (
     description="   "
     publishedAt="2018-03-25"
     author="@arthur"
+    tags={['analisis', 'diseño', 'objetos']}
   >
     <blockquote>
       Una traducción del articulo de Martin Fowler:{' '}
