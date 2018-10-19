@@ -14,7 +14,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "format",
+      "pre-commit": "yarn format",
       "commit-msg": "validate-commit-msg"
     }
   },

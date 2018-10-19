@@ -2,10 +2,10 @@ import Post from '../../components/post'
 
 export default () => (
   <Post
-    title= 'Bolsa de 5 libras'
-    image='https://cdn-images-1.medium.com/max/800/1*lJX-9L6dsEwymTKTR2JqQg.png'
-    description='Los problemas de tener un plan fijo y como lidiar con ello'
-    publishedAt='2018-02-15'
+    title="Bolsa de 5 libras"
+    image="https://cdn-images-1.medium.com/max/800/1*lJX-9L6dsEwymTKTR2JqQg.png"
+    description="Los problemas de tener un plan fijo y como lidiar con ello"
+    publishedAt="2018-02-15"
     author="@arthur"
   >
     <p>

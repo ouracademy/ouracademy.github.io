@@ -3,9 +3,9 @@ import Link from '../../components/link'
 
 export default () => (
   <Post
-    title='¿Existe tal cosa llamada análisis orientado a objetos?'
-    description='   '
-    publishedAt='2018-03-25'
+    title="¿Existe tal cosa llamada análisis orientado a objetos?"
+    description="   "
+    publishedAt="2018-03-25"
     author="@arthur"
   >
     <blockquote>

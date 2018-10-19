@@ -3,10 +3,10 @@ import Link from '../../components/link'
 
 export default () => (
   <Post
-    title='Cuando estes estancado, habla con el pato'
-    image='https://blog.mindovermachines.com/hubfs/Blog%20Media/rubber-ducky-2.jpg?t=1535571457800'
-    description='Alguna vez te haz estancado en un problema y, para resolverlo, empiezas a hablarte a ti mismo, o a un patito de goma en tu escritorio?'
-    publishedAt='2018-08-31'
+    title="Cuando estes estancado, habla con el pato"
+    image="https://blog.mindovermachines.com/hubfs/Blog%20Media/rubber-ducky-2.jpg?t=1535571457800"
+    description="Alguna vez te haz estancado en un problema y, para resolverlo, empiezas a hablarte a ti mismo, o a un patito de goma en tu escritorio?"
+    publishedAt="2018-08-31"
     author="@arthur"
   >
     <blockquote>

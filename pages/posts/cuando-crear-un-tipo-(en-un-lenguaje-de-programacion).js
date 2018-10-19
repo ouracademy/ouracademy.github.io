@@ -2,10 +2,10 @@ import Post from '../../components/post'
 
 export default () => (
   <Post
-    title='Cuando crear un Tipo (en un lenguaje de programación)?'
-    image='https://cdn-images-1.medium.com/max/800/1*CwKEGUfjnBNyAYNySLJHLw.png'
-    description='Una traducción del articulo de Martin Fowler: When to make a Type'
-    publishedAt='2017-02-21'
+    title="Cuando crear un Tipo (en un lenguaje de programación)?"
+    image="https://cdn-images-1.medium.com/max/800/1*CwKEGUfjnBNyAYNySLJHLw.png"
+    description="Una traducción del articulo de Martin Fowler: When to make a Type"
+    publishedAt="2017-02-21"
     author="@arthur"
   >
     <blockquote>

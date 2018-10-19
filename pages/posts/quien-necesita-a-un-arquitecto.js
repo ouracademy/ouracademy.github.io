@@ -1,11 +1,11 @@
 import Post from '../../components/post'
 
 export default () => (
-  <Post 
-    title='Quien necesita a un arquitecto?'
-    publishedAt='2017-02-15'
-    image='https://cdn-images-1.medium.com/max/800/1*QcyEoP1TzICT3qz88NeO5Q.png'
-    description='Una traducción del articulo de Martin Fowler: Who needs an architect?'
+  <Post
+    title="Quien necesita a un arquitecto?"
+    publishedAt="2017-02-15"
+    image="https://cdn-images-1.medium.com/max/800/1*QcyEoP1TzICT3qz88NeO5Q.png"
+    description="Una traducción del articulo de Martin Fowler: Who needs an architect?"
     author="@arthur"
   >
     <p>
