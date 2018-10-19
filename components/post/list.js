@@ -11,14 +11,24 @@ export default ({ posts }) => (
         <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           {posts.map(post => (
             <div className="post-preview" key={post.path}>
-              <p className="tags"><i className="fa fa fa-tags"></i> {post.tags.join(', ')}</p>
+              <div className="tags">
+                <i className="fa fa fa-tags"/> 
+                <ul className="list-inline">{post.tags.map(tag => 
+                    <li key={tag}>
+                      <Link href={`/tags/${tag}`}><a>{tag}</a></Link>
+                    </li>)
+                  }
+                </ul>
+              </div>
               <Link href={`/posts/${post.path}`}>
                 <a>
                   <h2 className="post-title">{post.title}</h2>
                 </a>
               </Link>
               <div className="post-meta">
-                <p>{format(post.publishedAt, 'DD MMM YYYY')} | {getAuthor(post).name}</p>
+                <p>
+                  {format(post.publishedAt, 'DD MMM YYYY')} | {getAuthor(post).name}
+                </p>
                 <p>{post.description}</p>
               </div>
               <hr />
@@ -30,8 +40,21 @@ export default ({ posts }) => (
         .tags {
           margin: 0;
           font-size: 0.85em;
+          display: flex;
         }
-      
+        
+        .tags ul {
+          margin-left: 5px;
+        }
+        
+        .tags ul li {
+          padding: 0px;
+        }
+        
+        .tags li + li:before {
+            content: ", ";
+        }
+    
         .post-preview a {
           color: #333333;
         }

@@ -3,29 +3,35 @@ const estraverse = require('estraverse')
 const toValue = require('esprima-to-value')
 
 module.exports = content => {
-  const ast = acorn.parse(content, {
+  const sep = {
     sourceType: 'module',
-    plugins: { jsx: true }
-  })
-
-  let reactArrowFunction
-
-  estraverse.traverse(ast, {
+    plugins: {
+      jsx: true
+    }
+  }
+  const ast = acorn.parse(content, sep)
+  
+  const traverseObj = {
     enter: function(node, parent) {
       if (node.type == 'ExportDefaultDeclaration') {
-        reactArrowFunction = node.declaration
+        reactArrowFunction =node.declaration
         this.break()
       }
     }
-  })
-
+  }
   
-  return reactArrowFunction.body.openingElement.attributes.reduce(
-    (ac, node) => {
-      const value = node.value
-      return {...ac, [node.name.name]: value.hasOwnProperty('value')? value.value : toArray(value.expression) }
-    }, {}
-  )
+  let reactArrowFunction
+  estraverse.traverse(ast,traverseObj)
+  
+  return reactArrowFunction.body.openingElement.attributes.reduce((ac, node) => {
+    const { value }  = node
+    
+    const fvalue = value.hasOwnProperty('value')? 
+      value.value: toArray(value.expression)
+    return {...ac,
+      [node.name.name]: fvalue
+    }
+  }, {})
 }
 
 const toArray = expression => expression.elements.map(node => node.value)
