@@ -4,12 +4,13 @@
   "description": "our webpage :)",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js && next",
-    "debug": "node index.js && next --inspect",
+    "generate-api": "node index.js",
+    "dev": "yarn generate-api && next",
+    "debug": "yarn generate-api && next --inspect",
     "test": "NODE_ENV=test jest",
-    "build": "next build",
-    "start": "node index.js && next start -p $PORT",
-    "heroku-postbuild": "next build",
+    "build": "yarn generate-api && next build",
+    "export": "yarn build && next export",
+    "start": "next start",
     "format": "precise-commits"
   },
   "husky": {
