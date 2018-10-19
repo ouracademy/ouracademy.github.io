@@ -1,19 +1,29 @@
 const path = require('path')
-const { readdir, readFile, readdirSync, readFileSync, writeFile } = require('fs')
+const {
+  readdir,
+  readFile,
+  readdirSync,
+  readFileSync,
+  writeFile
+} = require('fs')
 const extractPost = require('./extract-post')
 
 const postPath = path.join(__dirname, 'pages', 'posts')
 
-const posts = 
-  readdirSync(postPath)
-    .map(fileName => 
-        Object.assign(
-          extractPost(readFileSync(path.join(postPath, fileName), 'utf-8')),
-          {path: path.parse(fileName).name}
-        )
-    )
+const posts = readdirSync(postPath).map(fileName =>
+  Object.assign(
+    extractPost(readFileSync(path.join(postPath, fileName), 'utf-8')),
+    { path: path.parse(fileName).name }
+  )
+)
 
-module.exports = () => writeFile(path.join(__dirname, 'static', 'posts.json'), JSON.stringify({posts}), 'utf8', () => {});
+module.exports = () =>
+  writeFile(
+    path.join(__dirname, 'static', 'posts.json'),
+    JSON.stringify({ posts }),
+    'utf8',
+    () => {}
+  )
 
 /*
 const readFiles = (dirname, onFileContent, onError) => {

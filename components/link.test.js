@@ -6,6 +6,12 @@ import Link from './link'
 describe('Link', () => {
   it('should render children', () => {
     const app = shallow(<Link to="someURI">content</Link>)
-    expect(app.equals(<a href="someURI" target="__blank">content</a>)).toBeTruthy()
+    expect(
+      app.equals(
+        <a href="someURI" target="__blank">
+          content
+        </a>
+      )
+    ).toBeTruthy()
   })
 })
