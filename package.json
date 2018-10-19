@@ -7,7 +7,7 @@
     "generate-api": "node index.js",
     "dev": "yarn generate-api && next",
     "debug": "yarn generate-api && next --inspect",
-    "test": "NODE_ENV=test jest",
+    "test": "jest",
     "build": "yarn generate-api && next build",
     "export": "yarn build && next export",
     "start": "next start",
@@ -48,6 +48,10 @@
     "react-syntax-highlighter": "^9.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^23.6.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "husky": "^1.1.2",
