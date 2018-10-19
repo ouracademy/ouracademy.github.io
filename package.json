@@ -10,8 +10,14 @@
     "build": "next build",
     "start": "node index.js && next start -p $PORT",
     "heroku-postbuild": "next build",
-    "commitmsg": "validate-commit-msg"
+    "format": "precise-commits",
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "format",
+      "commitmsg": "validate-commit-msg",
+    }
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ouracademy/ouracademy.github.io.git"
@@ -45,6 +51,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.13.3",
     "jest": "^22.4.3",
+    "precise-commits": "^1.0.2",
     "prettier": "^1.14.3",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.3.0",
