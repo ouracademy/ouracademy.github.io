@@ -3,14 +3,10 @@ import Link from '../../components/link'
 
 export default () => (
   <Post
-    post={{
-      title: '"La fábrica" vs "el estudio"',
-      image:
-        'https://res.cloudinary.com/our-academy/image/upload/v1536542554/articles/factory-vs-studio.jpg',
-      description:
-        '¿Cuántos de nosotros hemos trabajado en una "fábrica" de software?, este término "fábrica" quizá sea un malentendido.',
-      publishedAt: '2018-09-09'
-    }}
+    title='"La fábrica" vs "el estudio"'
+    image='https://res.cloudinary.com/our-academy/image/upload/v1536542554/articles/factory-vs-studio.jpg'
+    description='¿Cuántos de nosotros hemos trabajado en una "fábrica" de software?, este término "fábrica" quizá sea un malentendido.'
+    publishedAt='2018-09-09'
     author="@arthur"
   >
     <blockquote>

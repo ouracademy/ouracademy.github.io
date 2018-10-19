@@ -3,14 +3,10 @@ import Code from '../../components/code'
 
 export default () => (
   <Post
-    post={{
-      title: 'El pequeño mocker',
-      image:
-        'http://www.informit.com/content/images/ch23_9780131495050/elementLinks/23fig02.jpg',
-      description:
-        'Una historia de patrones de testing: mock, stub, dummy, fake, spy...Una traducción del articulo The Little Mocker',
-      publishedAt: '2018-02-23'
-    }}
+    title='El pequeño mocker'
+    image='http://www.informit.com/content/images/ch23_9780131495050/elementLinks/23fig02.jpg'
+    description='Una historia de patrones de testing: mock, stub, dummy, fake, spy...Una traducción del articulo The Little Mocker'
+    publishedAt='2018-02-23'
     author="@arthur"
   >
     <blockquote>

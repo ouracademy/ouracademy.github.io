@@ -19,19 +19,7 @@ module.exports = content => {
     }
   })
 
-  const postExpression = reactArrowFunction.body.openingElement.attributes.find(
-    node => {
-      const identifier = node.name
-      return identifier.name === 'post'
-    }
-  ).value.expression
-
-  const author = reactArrowFunction.body.openingElement.attributes.find(
-    node => {
-      const identifier = node.name
-      return identifier.name === 'author'
-    }
-  ).value.value
-
-  return { ...toValue(postExpression), author }
+  return reactArrowFunction.body.openingElement.attributes.reduce(
+    (ac, node) => ({...ac, [node.name.name]: node.value.value }), {}
+  )
 }
