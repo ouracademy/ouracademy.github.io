@@ -9,19 +9,14 @@
     "test": "NODE_ENV=test jest",
     "build": "next build",
     "start": "node index.js && next start -p $PORT",
-    "heroku-postbuild": "next build"
+    "heroku-postbuild": "next build",
+    "format": "precise-commits"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "yarn format",
       "commit-msg": "validate-commit-msg"
     }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "repository": {
     "type": "git",
@@ -35,7 +30,7 @@
   },
   "homepage": "https://github.com/ouracademy/ouracademy.github.io#readme",
   "dependencies": {
-    "acorn": "^5.4.1",
+    "acorn": "^5.4.1",                                                                                                        
     "acorn-jsx": "^4.1.1",
     "babel-plugin-transform-define": "^1.3.0",
     "cloudinary-react": "^1.0.6",
@@ -44,21 +39,22 @@
     "esprima-to-value": "^1.0.5",
     "estraverse": "^4.2.0",
     "isomorphic-fetch": "^2.2.1",
-    "next": "latest",
-    "react": "^16.2.0",
-    "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
-    "react-share": "^2.0.0",
-    "react-syntax-highlighter": "^7.0.0"
+    "next": "7.0.2",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
+    "react-share": "^2.3.1",
+    "react-syntax-highlighter": "^9.0.0"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "husky": "^0.13.3",
-    "jest": "^22.4.3",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "precise-commits": "^1.0.2",
     "prettier": "^1.14.3",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.3.0",
-    "validate-commit-msg": "^2.12.1"
+    "react-test-renderer": "^16.5.2",
+    "validate-commit-msg": "^2.14.0"
   }
 }
