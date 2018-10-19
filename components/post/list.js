@@ -4,6 +4,31 @@ import authors from '../authors'
 
 const getAuthor = post => authors.find(x => x.id == post.author)
 
+const Tags = ({ tags }) => (
+  <ul className="list-inline">
+    {tags.map(tag => (
+      <li key={tag}>
+        <Link href={`/tags/${tag}`}>
+          <a>{tag}</a>
+        </Link>
+      </li>
+    ))}
+    <style jsx>{`
+      ul {
+        margin-left: 5px;
+      }
+
+      ul li {
+        padding: 0px;
+      }
+
+      li + li:before {
+        content: ', ';
+      }
+    `}</style>
+  </ul>
+)
+
 export default ({ posts }) => (
   <section>
     <div className="container">
@@ -12,13 +37,8 @@ export default ({ posts }) => (
           {posts.map(post => (
             <div className="post-preview" key={post.path}>
               <div className="tags">
-                <i className="fa fa fa-tags"/> 
-                <ul className="list-inline">{post.tags.map(tag => 
-                    <li key={tag}>
-                      <Link href={`/tags/${tag}`}><a>{tag}</a></Link>
-                    </li>)
-                  }
-                </ul>
+                <i className="fa fa fa-tags" />
+                <Tags tags={post.tags} />
               </div>
               <Link href={`/posts/${post.path}`}>
                 <a>
@@ -27,7 +47,8 @@ export default ({ posts }) => (
               </Link>
               <div className="post-meta">
                 <p>
-                  {format(post.publishedAt, 'DD MMM YYYY')} | {getAuthor(post).name}
+                  {format(post.publishedAt, 'DD MMM YYYY')} |{' '}
+                  {getAuthor(post).name}
                 </p>
                 <p>{post.description}</p>
               </div>
@@ -42,19 +63,7 @@ export default ({ posts }) => (
           font-size: 0.85em;
           display: flex;
         }
-        
-        .tags ul {
-          margin-left: 5px;
-        }
-        
-        .tags ul li {
-          padding: 0px;
-        }
-        
-        .tags li + li:before {
-            content: ", ";
-        }
-    
+
         .post-preview a {
           color: #333333;
         }
