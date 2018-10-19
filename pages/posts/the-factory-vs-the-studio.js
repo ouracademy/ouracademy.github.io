@@ -6,11 +6,9 @@ export default () =>
     title: '"La fábrica" vs "el estudio"',
     image: 'https://res.cloudinary.com/our-academy/image/upload/v1536542554/articles/factory-vs-studio.jpg',
     description: '¿Cuántos de nosotros hemos trabajado en una "fábrica" de software?, este término "fábrica" quizá sea un malentendido.',
-    publishedAt: '2018-09-09',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+    publishedAt: '2018-09-09'
+  }}
+  author='@arthur'>
 <blockquote>Una traducción del articulo <Link to="http://patricklogan.blogspot.com/2003_08_31_patricklogan_archive.html">"The Factory" vs. "The Studio"</Link>.</blockquote>
 <Image src="factory-vs-studio" alt="fábrica vs estudio" />
 <p>¿Cuántos de nosotros, desarrolladores de software, hemos trabajado en un

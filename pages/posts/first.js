@@ -1,15 +1,12 @@
 import Post from '../../components/post'
 
-// TODO: Add uncle bob 
 export default () =>
   <Post post={{
     title: 'Lo primero',
     description: '¿Por que las pruebas de software son lo primero?',
-    publishedAt: '2018-02-21',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+    publishedAt: '2018-02-21'
+  }} 
+  author='@arthur'>
     <p><strong>¿Por que las pruebas son lo primero?</strong></p>
     <p>Una traducción del articulo de <a href="http://blog.cleancoder.com/uncle-bob/2014/05/19/First.html">Robert “Uncle Bob” Martin: First</a></p>
     <p>

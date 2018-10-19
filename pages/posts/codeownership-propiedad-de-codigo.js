@@ -6,11 +6,8 @@ export default () =>
     title: 'CodeOwnership—Propiedad de código',
     image: 'https://cdn-images-1.medium.com/max/800/1*f0j7na4Iscep48mzTlHf1A.jpeg',
     description: 'Solo yo debo tocar el código que me asignaron? Otros también? O todo el equipo?...¿Quién tiene la propiedad del código?',
-    publishedAt: '2018-02-16',
-    author: {
-      name: 'Diana Quintanilla'
-    }
-}}>
+    publishedAt: '2018-02-16'
+}}  author='@diana'>
 <blockquote>
     <p>Solo yo debo tocar el código que me asignaron? Otros también? O todo el equipo?…¿Quién tiene la propiedad del código?</p>
     <p>Una traducción del articulo <Link to="https://martinfowler.com/bliki/CodeOwnership.html">Code Ownership</Link> de Martin Fowler</p>

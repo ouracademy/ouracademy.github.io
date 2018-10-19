@@ -6,11 +6,9 @@ export default () =>
     title: 'El pequeño mocker',
     image: 'http://www.informit.com/content/images/ch23_9780131495050/elementLinks/23fig02.jpg',
     description: 'Una historia de patrones de testing: mock, stub, dummy, fake, spy...Una traducción del articulo The Little Mocker',
-    publishedAt: '2018-02-23',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+    publishedAt: '2018-02-23'
+  }} 
+  author='@arthur'>
 <blockquote>Una traducción del articulo de Robert C. Martin - aka Uncle Bob: <a href="https://8thlight.com/blog/uncle-bob/2014/05/14/TheLittleMocker.html">The Little Mocker</a>.</blockquote>
 <p>La siguiente es una conversación sobre mocking (crear mocks - simulados):</p>
 <p>¿Que es esto?</p>

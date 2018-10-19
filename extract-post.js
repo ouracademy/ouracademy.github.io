@@ -25,5 +25,10 @@ const toValue = require('esprima-to-value');
         return identifier.name === 'post'
     }).value.expression
     
-    return toValue(postExpression)
+    const author = reactArrowFunction.body.openingElement.attributes.find(node => {
+        const identifier = node.name
+        return identifier.name === 'author'
+    }).value.value
+    
+    return {...toValue(postExpression), author }
 }

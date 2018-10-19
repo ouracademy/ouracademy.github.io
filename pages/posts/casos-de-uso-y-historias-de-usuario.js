@@ -5,11 +5,8 @@ export default () =>
     title: 'Casos de uso y Historias de usuario',
     image: 'https://cdn-images-1.medium.com/max/600/1*leQKaSU-kcILOMBEtXcrBg.png',
     description: 'Cual es la diferencia entre Casos de uso y las Historias de Usuario de Extreme Programming (XP)?',
-    publishedAt: '2017-08-19',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+    publishedAt: '2017-08-19'
+  }} author='@arthur'>
 <h2>Cual es la diferencia entre <a href="https://martinfowler.com/bliki/UseCase.html">Casos de uso</a> y las <a href="https://martinfowler.com/bliki/UserStory.html">Historias de Usuario</a> de XP?</h2>
 <blockquote> Traducido del articulo <a href="https://martinfowler.com/bliki/UseCasesAndStories.html">UseCasesAndStories</a> de Martin Fowler </blockquote>
 <p>Esta es una pregunta común, y no una que tiene una respuesta generalmente aceptada. Muchas personas en la comunidad de XP

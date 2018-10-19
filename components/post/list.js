@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import format from 'date-fns/format'
+import authors from '../authors'
 
-const byPublishedDate = (a, b) => new Date(a.publishedAt) < new Date(b.publishedAt)
+const getAuthor = post => authors.find(x => x.id == post.author)
 
 export default ({posts}) => 
     <section>
@@ -8,7 +10,7 @@ export default ({posts}) =>
             <div className="row">
                 <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     {
-                        posts.sort(byPublishedDate).map((post) => (
+                        posts.map(post => (
                             <div className="post-preview" key={post.path}>
                                 <Link href={`/posts/${post.path}`}>
                                     <a>
@@ -17,7 +19,7 @@ export default ({posts}) =>
                                         </h2>
                                     </a>
                                 </Link>
-                                <p className="post-meta">Por <a href="#">{post.author.name}</a> el {toddmmyyyy(post.publishedAt)}</p>
+                                <p className="post-meta">Por {getAuthor(post).name} el {format(post.publishedAt,'DD/MM/YYYY')}</p>
                                 <hr/>
                             </div>
                         ))
@@ -105,11 +107,3 @@ export default ({posts}) =>
                 `}</style>
         </div>
     </section>
-
-// we call use momentjs or FormatJS of React...this second will be oyr next option
-const toddmmyyyy = (stringDate) => {
-  const pad = s => s < 10 ? `0${s}` : s
-  const date = new Date(stringDate)
-  
-  return [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/');
-}

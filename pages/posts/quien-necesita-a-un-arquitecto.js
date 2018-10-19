@@ -4,12 +4,10 @@ export default () =>
 <Post post={{
     title: 'Quien necesita a un arquitecto?',
     publishedAt: '2017-02-15',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    },
     image: 'https://cdn-images-1.medium.com/max/800/1*QcyEoP1TzICT3qz88NeO5Q.png',
     description: 'Una traducción del articulo de Martin Fowler: Who needs an architect?'
-  }}>
+  }}
+  author='@arthur'>
 <p>Una traducción del farticulo de Martin Fowler: <a href="http://www.in-gmbh.eu/uploads/media/whoNeedsArchitect.pdf">Who needs an architect?</a>
 </p>
 <figure>

@@ -6,10 +6,7 @@ export default () =>
     image: 'https://cdn-images-1.medium.com/max/800/1*lJX-9L6dsEwymTKTR2JqQg.png',
     description: 'Los problemas de tener un plan fijo y como lidiar con ello',
     publishedAt: '2018-02-15',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+  }} author='@arthur'>
   <p><strong>o los problemas de tener un plan fijo y como lidiar con ello</strong></p>
   <p>Una traducción del articulo de Martin Fowler: <a href="https://martinfowler.com/bliki/FivePoundBag.html">When to make a Type</a></p>
   <blockquote>

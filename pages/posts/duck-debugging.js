@@ -6,11 +6,9 @@ export default () =>
     title: 'Cuando estes estancado, habla con el pato',
     image: 'https://blog.mindovermachines.com/hubfs/Blog%20Media/rubber-ducky-2.jpg?t=1535571457800',
     description: 'Alguna vez te haz estancado en un problema y, para resolverlo, empiezas a hablarte a ti mismo, o a un patito de goma en tu escritorio?',
-    publishedAt: '2018-08-31',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+    publishedAt: '2018-08-31'
+  }} 
+  author='@arthur'>
     <blockquote>Una traducción del articulo <Link to="http://blog.mindovermachines.com/when-you-get-stuck-talk-to-the-duck">When you get stuck, talk to the duck</Link>.</blockquote>
     <img src="https://blog.mindovermachines.com/hubfs/Blog%20Media/rubber-ducky-2.jpg?t=1535571457800" alt="rubber duck debugging"/>
     <h3>¿Qué significa hacer “debug de pato de goma (rubber duck debugging)"</h3>

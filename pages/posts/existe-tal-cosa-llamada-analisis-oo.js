@@ -5,11 +5,9 @@ export default () =>
 <Post post={{
     title: '¿Existe tal cosa llamada análisis orientado a objetos?',
     description: '   ',
-    publishedAt: '2018-03-25',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+    publishedAt: '2018-03-25'
+  }} 
+  author='@arthur'>
 <blockquote>
   Una traducción del articulo de Martin Fowler: <Link 
   to="https://martinfowler.com/distributedComputing/analysis.pdf">Is There

@@ -5,11 +5,9 @@ export default () =>
     title: 'Cuando crear un Tipo (en un lenguaje de programación)?',
     image: 'https://cdn-images-1.medium.com/max/800/1*CwKEGUfjnBNyAYNySLJHLw.png',
     description: 'Una traducción del articulo de Martin Fowler: When to make a Type',
-    publishedAt: '2017-02-21',
-    author: {
-      name: 'Arthur Mauricio Delgadillo'
-    }
-  }}>
+    publishedAt: '2017-02-21'
+  }} 
+  author='@arthur'>
 <blockquote>Una traducción al español del articulo de Martin Fowler: <a href="https://pdfs.semanticscholar.org/2a01/e1f14172a91215931ed787d97dee1301fe7d.pdf">When to make a Type</a>
 </blockquote>
 <p>Cuando empece a programar, empece con lenguajes muy primitivos, como Fortran 4 y con tempranos sabores de Basic. Uno de los
