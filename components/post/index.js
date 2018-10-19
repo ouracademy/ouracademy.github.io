@@ -9,17 +9,17 @@ import { Image as CloudinaryImage } from 'cloudinary-react'
 
 const disqusShortname = 'academyforus'
 
-export const Article = ({ post, children, router }) => {
+export const Article = ({ title, description, image, children, router }) => {
   const url = `https://www.academyfor.us${router.asPath}`
   return (
     <Page>
       <Head
-        title={post.title}
+        title={title}
         meta={{
-          description: post.description,
+          description,
           og: {
             type: 'article',
-            image: post.image
+            image: image
           }
         }}
       />
@@ -29,21 +29,21 @@ export const Article = ({ post, children, router }) => {
             <div className="row">
               <div className="col-lg-2 col-md-1">
                 <SocialLinks
-                  title={post.title}
-                  description={post.description}
+                  title={title}
+                  description={description}
                   url={url}
                 />
               </div>
               <div className="col-lg-8 col-md-10">
-                <h1>{post.title}</h1>
+                <h1>{title}</h1>
                 {children}
                 <div className="comments">
                   <DiscussionEmbed
                     shortname={disqusShortname}
                     config={{
                       url,
-                      identifier: post.title,
-                      title: post.title
+                      identifier: title,
+                      title
                     }}
                   />
                 </div>

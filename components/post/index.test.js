@@ -9,7 +9,7 @@ describe('SocialLinks', () => {
     image: 'an-image-uri'
   }
   const article = shallow(
-    <Article post={fakePost} router={fakeRouter}>
+    <Article {...fakePost} router={fakeRouter}>
       <p>A super content</p>
     </Article>
   )
