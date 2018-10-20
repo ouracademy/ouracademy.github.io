@@ -1,4 +1,6 @@
-import { getTags } from './tags'
+import TagsPage, { getTags } from './tags'
+import { shallow } from 'enzyme'
+import { Tags } from '../components/post/list'
 
 describe('getTags', () => {
   it('should get unique tags from posts', () => {
@@ -43,4 +45,20 @@ describe('getTags', () => {
     expect(getTags(posts)).toEqual(expect.arrayContaining(expected))
     expect(getTags(posts)).toHaveLength(expected.length)
   })
+})
+
+
+describe('<TagsPage>', () => {
+  it('shows all tags', () => {
+    const someTags = ['arquitectura', 'patron']
+    const wrapper = shallow(<TagsPage tags={someTags} />)
+    expect(wrapper.find(Tags)).toHaveLength(1)
+    expect(wrapper.find(Tags).props().tags).toEqual(someTags)
+  })
+  it('shows some suggestion when no tag is selected', () => {
+    const someTags = ['arquitectura', 'patron']
+    const wrapper = shallow(<TagsPage tags={someTags} />)
+    expect(wrapper.find('.suggestion')).toHaveLength(1)
+  })
+  
 })

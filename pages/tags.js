@@ -13,7 +13,7 @@ const TagsPage = ({ tags }) => (
     <article>
       <div className="container">
         <h2>Etiquetas</h2>
-        <p>
+        <p className="suggestion">
           Tenemos {tags.length} etiquetas para que explores nuestro contenido de
           una mejor forma.
         </p>
