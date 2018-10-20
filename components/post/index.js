@@ -10,7 +10,7 @@ import { Image as CloudinaryImage } from 'cloudinary-react'
 const disqusShortname = 'academyforus'
 
 export const Article = ({ title, description, image, children, router }) => {
-  const url = `https://www.academyfor.us${router.asPath}`
+  const url = `${process.env.API}${router.asPath}`
   return (
     <Page>
       <Head

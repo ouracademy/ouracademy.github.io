@@ -17,7 +17,7 @@ const Home = ({ posts }) => (
 )
 
 Home.getInitialProps = async () => {
-  const res = await fetch(process.env.API_POSTS)
+  const res = await fetch(process.env.API + '/static/posts.json')
   const data = await res.json()
   const posts = data.posts.sort(byPublishedDate)
   return { posts }
