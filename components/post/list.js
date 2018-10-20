@@ -4,7 +4,7 @@ import authors from '../authors'
 
 const getAuthor = post => authors.find(x => x.id == post.author)
 
-const Tags = ({ tags }) => (
+export const Tags = ({ tags }) => (
   <ul className="list-inline">
     {tags.map(tag => (
       <li key={tag}>

@@ -20,15 +20,19 @@ export default ({ absolute }) => (
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav pullRight>
-        <NavItem eventKey={1} href="/" onClick={() => Router.push('/')}>
-          Inicio
-        </NavItem>
         <NavItem
-          eventKey={2}
+          eventKey={1}
           href="/about"
           onClick={() => Router.push('/about')}
         >
           Nosotros
+        </NavItem>
+        <NavItem
+          eventKey={2}
+          href="/tags"
+          onClick={() => Router.push('/tags')}
+        >
+          Tags
         </NavItem>
       </Nav>
     </Navbar.Collapse>
