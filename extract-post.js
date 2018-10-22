@@ -1,6 +1,5 @@
 const acorn = require('acorn-jsx/inject')(require('acorn'))
 const estraverse = require('estraverse')
-const toValue = require('esprima-to-value')
 
 module.exports = content => {
   const sep = { sourceType: 'module', plugins: { jsx: true } }

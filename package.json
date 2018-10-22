@@ -37,7 +37,6 @@
     "cloudinary-react": "^1.0.6",
     "date-fns": "^1.29.0",
     "disqus-react": "^1.0.5",
-    "esprima-to-value": "^1.0.5",
     "estraverse": "^4.2.0",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.11",

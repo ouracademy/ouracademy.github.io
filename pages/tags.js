@@ -3,11 +3,17 @@ import Page from '../layouts/main'
 import Slider from '../components/slider'
 import fetch from 'isomorphic-fetch'
 import union from 'lodash/fp/union'
-import { Tags } from '../components/post/list'
+import Posts, { Tags } from '../components/post/list'
 
 export const getTags = posts => posts.map(post => post.tags).reduce(union, [])
+export const Tag = ({ name, posts }) => (
+  <div>
+    <h3 className="name">{name}</h3>
+    <Posts posts={posts} />
+  </div>
+)
 
-const TagsPage = ({ tags }) => (
+const TagsPage = ({ tags, selectedTag }) => (
   <Page>
     <Head />
     <article>
@@ -18,6 +24,9 @@ const TagsPage = ({ tags }) => (
           una mejor forma.
         </p>
         <Tags tags={tags} />
+        {
+          selectedTag && <Tag {...selectedTag} />
+        }
       </div>
     </article>
   </Page>
