@@ -19,12 +19,12 @@ describe('<TagsPage>', () => {
     const tag = {
       name: 'arquitectura',
       posts: [
-        { title: 'Quien necesita a un arquitecto?'},
-        { title: 'Arquitectura hexagonal'},
+        { title: 'Quien necesita a un arquitecto?' },
+        { title: 'Arquitectura hexagonal' }
       ]
     }
-    
-    const wrapper = shallow(<TagsPage tags={someTags} selectedTag={tag}/>)
+
+    const wrapper = shallow(<TagsPage tags={someTags} selectedTag={tag} />)
     const TagWrapper = wrapper.find(Tag)
     expect(TagWrapper).toHaveLength(1)
     expect(TagWrapper.props().name).toEqual(tag.name)
@@ -35,7 +35,6 @@ describe('<TagsPage>', () => {
     //console.log(initialProps)
   })
 })
-
 
 describe('<Tag>', () => {
   const name = 'arquitectura'

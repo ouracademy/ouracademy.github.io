@@ -8,7 +8,7 @@ export const getTag = (tag, posts) => ({
   posts: posts.filter(post => post.tags.includes(tag))
 })
 
-export const Tag = ({ name, posts }) => 
+export const Tag = ({ name, posts }) => (
   <div>
     <h2 className="name">{name}</h2>
     <Posts posts={posts} />
@@ -16,8 +16,10 @@ export const Tag = ({ name, posts }) =>
       .name {
         padding-bottom: 0.5em;
         font-size: 2.2em;
-      }`}</style>
+      }
+    `}</style>
   </div>
+)
 
 const TagsPage = ({ tags, selectedTag, tag }) => (
   <Page>
