@@ -6,7 +6,7 @@ const {
   readFileSync,
   writeFileSync
 } = require('fs')
-const extractPost = require('./extract-post')
+const extractPost = require('../extract-post')
 
 const getProps = postPath =>
   readdirSync(postPath).map(fileName =>

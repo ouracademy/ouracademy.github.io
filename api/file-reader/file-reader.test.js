@@ -1,4 +1,4 @@
-const { getProps, writeJSON } = require('../file-reader')
+const { getProps, writeJSON } = require('./file-reader')
 const { existsSync, readFileSync } = require('fs')
 const path = require('path')
 

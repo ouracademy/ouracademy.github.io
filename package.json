@@ -4,7 +4,7 @@
   "description": "our webpage :)",
   "main": "index.js",
   "scripts": {
-    "generate-api": "node index.js",
+    "generate-api": "node api",
     "dev": "yarn generate-api && next",
     "debug": "yarn generate-api && next --inspect",
     "test": "jest",
