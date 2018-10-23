@@ -1,8 +1,12 @@
 const pickBy = require('lodash/fp/pickBy')
-const { tags } = require('./api')
+const getTags = require('./api/get-tags')
+const fetch = require('isomorphic-fetch')
+const { posts } = require('./api')
 
 module.exports = {
   exportPathMap: async function(defaultPathMap) {
+    const tags = getTags(posts)
+
     const tagPages = tags.reduce(
       (pages, tag) =>
         Object.assign({}, pages, {

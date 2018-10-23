@@ -30,10 +30,10 @@ describe('<TagsPage>', () => {
     expect(TagWrapper.props().name).toEqual(tag.name)
     expect(TagWrapper.props().posts).toEqual(tag.posts)
   })
-  it('get all tags when getInitialProps ', async () => {
-    //const initialProps = await TagsPage.getInitialProps()
-    //console.log(initialProps)
-  })
+  // it('get all tags when getInitialProps ', async () => {
+  //   const initialProps = await TagsPage.getInitialProps()
+  //   console.log(initialProps)
+  // })
 })
 
 describe('<Tag>', () => {

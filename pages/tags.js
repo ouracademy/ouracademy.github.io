@@ -2,6 +2,7 @@ import Head from '../layouts/head'
 import Page from '../layouts/main'
 import fetch from 'isomorphic-fetch'
 import Posts, { Tags } from '../components/post/list'
+import getTags from '../api/get-tags'
 
 export const getTag = (tag, posts) => ({
   name: tag,
@@ -45,11 +46,9 @@ const TagsPage = ({ tags, selectedTag, tag }) => (
 )
 
 TagsPage.getInitialProps = async ({ query }) => {
-  const resTags = await fetch(process.env.API + '/static/tags.json')
-  const { tags } = await resTags.json()
-
-  const resPosts = await fetch(process.env.API + '/static/posts.json')
-  const { posts } = await resPosts.json()
+  const response = await fetch(process.env.API + '/static/posts.json')
+  const { posts } = await response.json()
+  const tags = getTags(posts)
 
   return { tags, selectedTag: getTag(query.tag || tags[0], posts) }
 }
