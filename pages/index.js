@@ -11,7 +11,15 @@ const Home = ({ posts }) => (
   <div>
     <Head />
     <Page slider={<Slider backgroundImage="/static/img/banner.png" />}>
-      <PostList posts={posts} />
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <PostList posts={posts} />
+            </div>
+          </div>
+        </div>
+      </section>
     </Page>
   </div>
 )

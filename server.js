@@ -9,9 +9,9 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
-  server.get('/post/:id', (req, res) => {
-    return app.render(req, res, '/post', {
-      id: req.params.id
+  server.get('/tags/:tag', (req, res) => {
+    return app.render(req, res, '/tags', {
+      tag: req.params.tag
     })
   })
 

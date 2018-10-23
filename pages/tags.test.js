@@ -1,4 +1,4 @@
-import TagsPage, { Tag } from './tags'
+import TagsPage, { Tag, getTag } from './tags'
 import { shallow } from 'enzyme'
 import Posts, { Tags } from '../components/post/list'
 
@@ -40,19 +40,59 @@ describe('<TagsPage>', () => {
 describe('<Tag>', () => {
   const name = 'arquitectura'
   const posts = [
-    { title: 'Quien necesita a un arquitecto?'},
-    { title: 'Arquitectura hexagonal'},
+    { title: 'Quien necesita a un arquitecto?' },
+    { title: 'Arquitectura hexagonal' }
   ]
-  
+
   it('show the name of the tag', () => {
-    const wrapper = shallow(<Tag name={name} posts={posts}/>)
+    const wrapper = shallow(<Tag name={name} posts={posts} />)
     expect(wrapper.find('.name').text()).toEqual(name)
   })
-  
+
   it('show a <Posts> of the posts', () => {
-    const wrapper = shallow(<Tag name={name} posts={posts}/>)
+    const wrapper = shallow(<Tag name={name} posts={posts} />)
     const PostsWrapper = wrapper.find(Posts)
     expect(PostsWrapper).toHaveLength(1)
     expect(PostsWrapper.props().posts).toEqual(posts)
+  })
+})
+
+describe('getTag()', () => {
+  it(`should give a tag with all of it's posts`, () => {
+    const posts = [
+      { name: 'a post', tags: ['arquitectura', 'patron', 'testing'] },
+      { name: 'a post 1', tags: ['planeacion', 'agil'] },
+      { name: 'a post 2', tags: ['agil', 'requerimientos'] },
+      { name: 'a post 3', tags: ['agil', 'equipo', 'codigo'] },
+      { name: 'a post 4', tags: ['codigo', 'objetos', 'diseño'] },
+      {
+        name: 'a post 5',
+        tags: ['patron', 'practica', 'proceso', 'debug', 'codigo']
+      },
+      { name: 'a post 6', tags: ['diseño', 'patron', 'testing'] },
+      { name: 'a post 7', tags: ['analisis', 'diseño', 'objetos'] },
+      { name: 'a post 8', tags: ['practica', 'testing'] },
+      {
+        name: 'a post 9',
+        tags: ['arquitectura', 'codigo', 'testing', 'formas-de-ver']
+      },
+      { name: 'a post 10', tags: ['proceso', 'agil', 'formas-de-ver'] }
+    ]
+
+    const tag = getTag('arquitectura', posts)
+
+    expect(tag.name).toEqual('arquitectura')
+    expect(tag.posts).toEqual(
+      expect.arrayContaining([
+        {
+          name: 'a post',
+          tags: ['arquitectura', 'patron', 'testing']
+        },
+        {
+          name: 'a post 9',
+          tags: ['arquitectura', 'codigo', 'testing', 'formas-de-ver']
+        }
+      ])
+    )
   })
 })

@@ -2,4 +2,5 @@
 node_modules
 *.log
 static/posts.json
+static/tags.json
 out/
