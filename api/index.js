@@ -1,6 +1,6 @@
 const path = require('path')
 const { writeJSON, getProps } = require('./file-reader')
-const getTags = require('get-tags')
+const getTags = require('./get-tags')
 
 const root = path.join(__dirname, '..')
 const serve = writeJSON(path.join(root, 'static'))

@@ -22,25 +22,9 @@ describe('getTags', () => {
       { name: 'a post 10', tags: ['proceso', 'agil', 'formas-de-ver'] }
     ]
 
-    const expected = [
-      'arquitectura',
-      'patron',
-      'testing',
-      'planeacion',
-      'agil',
-      'requerimientos',
-      'equipo',
-      'codigo',
-      'objetos',
-      'diseño',
-      'practica',
-      'proceso',
-      'debug',
-      'analisis',
-      'formas-de-ver'
-    ]
+    const expected = ['agil', 'analisis', 'arquitectura', 'codigo', 'debug', 'diseño', 'equipo', 'formas-de-ver', 'objetos', 'patron', 'planeacion', 'practica', 'proceso', 'requerimientos', 'testing']
 
-    expect(getTags(posts)).toEqual(expect.arrayContaining(expected))
+    expect(getTags(posts)).toEqual(expected)
     expect(getTags(posts)).toHaveLength(expected.length)
   })
 })
