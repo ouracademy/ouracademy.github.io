@@ -1,11 +1,8 @@
 import Head from '../layouts/head'
 import Page from '../layouts/main'
-import Slider from '../components/slider'
 import fetch from 'isomorphic-fetch'
-import union from 'lodash/fp/union'
 import Posts, { Tags } from '../components/post/list'
 
-export const getTags = posts => posts.map(post => post.tags).reduce(union, [])
 export const Tag = ({ name, posts }) => (
   <div>
     <h3 className="name">{name}</h3>
@@ -33,11 +30,11 @@ const TagsPage = ({ tags, selectedTag }) => (
 )
 
 TagsPage.getInitialProps = async () => {
-  const res = await fetch(process.env.API + '/static/posts.json')
+  const res = await fetch(process.env.API + '/static/tags.json')
   const data = await res.json()
-  const { posts } = data
+  const { tags } = data
 
-  return { tags: getTags(posts) }
+  return { tags }
 }
 
 export default TagsPage
