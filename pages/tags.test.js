@@ -1,6 +1,30 @@
 import TagsPage, { Tag, getTag } from './tags'
 import { shallow } from 'enzyme'
 import Posts, { Tags } from '../components/post/list'
+import { posts, tags } from '../api/get-tags.test'
+
+import fetch from 'isomorphic-fetch'
+
+jest.mock('isomorphic-fetch')
+
+const expectEqualTag = (tag, expectedTag) => {
+  expect(tag.name).toEqual(expectedTag.name)
+  expect(tag.posts).toEqual(expect.arrayContaining(expectedTag.posts))
+}
+
+const architectureTag = {
+  name: 'arquitectura',
+  posts: [
+    {
+      name: 'a post',
+      tags: ['arquitectura', 'patron', 'testing']
+    },
+    {
+      name: 'a post 9',
+      tags: ['arquitectura', 'codigo', 'testing', 'formas-de-ver']
+    }
+  ]
+}
 
 describe('<TagsPage>', () => {
   it('shows all tags', () => {
@@ -30,10 +54,43 @@ describe('<TagsPage>', () => {
     expect(TagWrapper.props().name).toEqual(tag.name)
     expect(TagWrapper.props().posts).toEqual(tag.posts)
   })
-  // it('get all tags when getInitialProps ', async () => {
-  //   const initialProps = await TagsPage.getInitialProps()
-  //   console.log(initialProps)
-  // })
+  describe('getInitialProps()', () => {
+    beforeEach(() => {
+      fetch.mockImplementation(() =>
+        Promise.resolve({
+          ok: true,
+          json: () => ({
+            posts
+          })
+        })
+      )
+    })
+
+    it('get all tags ', async () => {
+      const initialProps = await TagsPage.getInitialProps({ query: {} })
+      expect(initialProps.tags).toEqual(tags)
+    })
+
+    it('get architecture tag when query.tag is arquitectura', async () => {
+      const initialProps = await TagsPage.getInitialProps({
+        query: { tag: 'arquitectura' }
+      })
+      expectEqualTag(initialProps.selectedTag, architectureTag)
+    })
+
+    it(`should get the first tag object (in this case agil) if there isn't no query.tag`, async () => {
+      const initialProps = await TagsPage.getInitialProps({ query: {} })
+      expectEqualTag(initialProps.selectedTag, {
+        name: 'agil',
+        posts: [
+          { name: 'a post 1', tags: ['planeacion', 'agil'] },
+          { name: 'a post 2', tags: ['agil', 'requerimientos'] },
+          { name: 'a post 3', tags: ['agil', 'equipo', 'codigo'] },
+          { name: 'a post 10', tags: ['proceso', 'agil', 'formas-de-ver'] }
+        ]
+      })
+    })
+  })
 })
 
 describe('<Tag>', () => {
@@ -58,40 +115,6 @@ describe('<Tag>', () => {
 
 describe('getTag()', () => {
   it(`should give a tag with all of it's posts`, () => {
-    const posts = [
-      { name: 'a post', tags: ['arquitectura', 'patron', 'testing'] },
-      { name: 'a post 1', tags: ['planeacion', 'agil'] },
-      { name: 'a post 2', tags: ['agil', 'requerimientos'] },
-      { name: 'a post 3', tags: ['agil', 'equipo', 'codigo'] },
-      { name: 'a post 4', tags: ['codigo', 'objetos', 'diseño'] },
-      {
-        name: 'a post 5',
-        tags: ['patron', 'practica', 'proceso', 'debug', 'codigo']
-      },
-      { name: 'a post 6', tags: ['diseño', 'patron', 'testing'] },
-      { name: 'a post 7', tags: ['analisis', 'diseño', 'objetos'] },
-      { name: 'a post 8', tags: ['practica', 'testing'] },
-      {
-        name: 'a post 9',
-        tags: ['arquitectura', 'codigo', 'testing', 'formas-de-ver']
-      },
-      { name: 'a post 10', tags: ['proceso', 'agil', 'formas-de-ver'] }
-    ]
-
-    const tag = getTag('arquitectura', posts)
-
-    expect(tag.name).toEqual('arquitectura')
-    expect(tag.posts).toEqual(
-      expect.arrayContaining([
-        {
-          name: 'a post',
-          tags: ['arquitectura', 'patron', 'testing']
-        },
-        {
-          name: 'a post 9',
-          tags: ['arquitectura', 'codigo', 'testing', 'formas-de-ver']
-        }
-      ])
-    )
+    expectEqualTag(getTag('arquitectura', posts), architectureTag)
   })
 })
