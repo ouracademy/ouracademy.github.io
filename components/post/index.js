@@ -1,15 +1,38 @@
 import { withRouter } from 'next/router'
 import Head from '../../layouts/head'
 import Page from '../../layouts/main'
-import Slider from '../slider'
 import SocialLinks from './social-links'
 import { DiscussionEmbed } from 'disqus-react'
 
+import { Tag } from './list'
 import { Image as CloudinaryImage } from 'cloudinary-react'
 
 const disqusShortname = 'academyforus'
 
-export const Article = ({ title, description, image, children, router }) => {
+const Tags = ({ tags }) => (
+  <h3>
+    <i className="fa fa fa-tags" />{' '}
+    {tags.map(tag => (
+      <Tag key={tag} tag={tag} className="badge badge-secondary" />
+    ))}
+    <style jsx global>{`
+      a.badge.badge-secondary {
+        font-size: initial;
+        margin: 2px;
+        text-decoration: none;
+      }
+    `}</style>
+  </h3>
+)
+
+export const Article = ({
+  title,
+  description,
+  image,
+  tags,
+  children,
+  router
+}) => {
   const url = `${process.env.API}${router.asPath}`
   return (
     <Page>
@@ -36,6 +59,7 @@ export const Article = ({ title, description, image, children, router }) => {
               </div>
               <div className="col-lg-8 col-md-10">
                 <h1>{title}</h1>
+                <Tags tags={tags} />
                 {children}
                 <div className="comments">
                   <DiscussionEmbed

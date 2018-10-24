@@ -17,7 +17,9 @@ export default () => (
       </Link>
       .
     </blockquote>
-    <Image src="factory-vs-studio" alt="fábrica vs estudio" />
+    <figure>
+      <Image src="factory-vs-studio" alt="fábrica vs estudio" />
+    </figure>
     <p>
       ¿Cuántos de nosotros, desarrolladores de software, hemos trabajado en un
       lugar que las areas de administración, ventas y marketing llaman "la

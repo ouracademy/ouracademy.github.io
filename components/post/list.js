@@ -4,13 +4,17 @@ import authors from '../authors'
 
 const getAuthor = post => authors.find(x => x.id == post.author)
 
+export const Tag = ({ tag, ...rest }) => (
+  <Link href={`/tags?tag=${tag}`} as={`/tags/${tag}`}>
+    <a {...rest}>{tag}</a>
+  </Link>
+)
+
 export const Tags = ({ tags }) => (
   <ul className="list-inline">
     {tags.map(tag => (
       <li key={tag}>
-        <Link href={`/tags?tag=${tag}`} as={`/tags/${tag}`}>
-          <a>{tag}</a>
-        </Link>
+        <Tag tag={tag} />
       </li>
     ))}
     <style jsx>{`
