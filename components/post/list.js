@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import format from 'date-fns/format'
-import authors from '../authors'
-
-const getAuthor = post => authors.find(x => x.id == post.author)
+import { getAuthor } from '../authors'
 
 export const Tag = ({ tag, ...rest }) => (
   <Link href={`/tags?tag=${tag}`} as={`/tags/${tag}`}>
@@ -48,7 +46,8 @@ export default ({ posts }) => (
         </Link>
         <div className="post-meta">
           <p>
-            {format(post.publishedAt, 'DD MMM YYYY')} | {getAuthor(post).name}
+            {format(post.publishedAt, 'DD MMM YYYY')} |{' '}
+            {getAuthor(post.author).name}
           </p>
           <p>{post.description}</p>
         </div>
