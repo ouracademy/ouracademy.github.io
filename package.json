@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "generate-api": "node api",
-    "dev": "yarn generate-api && node server.js",
+    "dev": "yarn generate-api && nodemon server.js",
     "debug": "yarn generate-api && next --inspect",
     "test": "jest",
     "build": "yarn generate-api && next build",
@@ -48,6 +48,7 @@
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.11",
     "next": "7.0.2",
+    "nodemon": "^1.18.4",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
