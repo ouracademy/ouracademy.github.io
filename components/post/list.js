@@ -33,27 +33,31 @@ export const Tags = ({ tags }) => (
 
 export default ({ posts }) => (
   <div>
-    {posts.map(post => (
-      <div className="post-preview" key={post.path}>
-        <div className="tags">
-          <i className="fa fa fa-tags" />
-          <Tags tags={post.tags} />
-        </div>
-        <Link href={`/posts/${post.path}`}>
-          <a>
-            <h2 className="post-title">{post.title}</h2>
-          </a>
-        </Link>
-        <div className="post-meta">
-          <p>
-            {format(post.publishedAt, 'DD MMM YYYY')} |{' '}
-            {getAuthor(post.author).name}
-          </p>
-          <p>{post.description}</p>
-        </div>
-        <hr />
-      </div>
+    {posts.map(x => (
+      <Post key={x.path} post={x} />
     ))}
+  </div>
+)
+
+export const Post = ({ post }) => (
+  <div className="post-preview">
+    <div className="tags">
+      <i className="fa fa fa-tags" />
+      <Tags tags={post.tags} />
+    </div>
+    <Link href={`/posts/${post.path}`}>
+      <a>
+        <h2 className="title">{post.title}</h2>
+      </a>
+    </Link>
+    <div className="post-meta">
+      <p>
+        {format(post.publishedAt, 'DD MMM YYYY')} |{' '}
+        {getAuthor(post.author).name}
+      </p>
+      <p className="description">{post.description}</p>
+    </div>
+    <hr />
     <style jsx>{`
       .tags {
         margin: 0;
@@ -68,7 +72,7 @@ export default ({ posts }) => (
         text-decoration: none;
         color: #25949f;
       }
-      .post-preview a .post-title {
+      .post-preview a .title {
         font-size: 30px;
         margin-top: 12px;
         margin-bottom: 10px;
@@ -97,7 +101,7 @@ export default ({ posts }) => (
         text-decoration: underline;
       }
       @media only screen and (min-width: 768px) {
-        .post-preview a .post-title {
+        .post-preview a .title {
           font-size: 36px;
         }
       }
