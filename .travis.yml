@@ -1,0 +1,7 @@
+language: node_js
+node_js: 'node'
+install:
+  - yarn global codecov
+script:
+  - yarn test --coverage
+  - codecov
