@@ -27,14 +27,17 @@ export default ({ absolute }) => (
         >
           Nosotros
         </NavItem>
-        <NavItem
-          eventKey={2}
-          href="/tags"
-          onClick={() => Router.push('/tags')}
-        >
+        <NavItem eventKey={2} href="/tags" onClick={() => Router.push('/tags')}>
           Tags
         </NavItem>
       </Nav>
     </Navbar.Collapse>
+    <style jsx global>{`
+      .navbar-custom.absolute {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+      }
+    `}</style>
   </Navbar>
 )

@@ -119,12 +119,6 @@ export default ({ children, slider }) => {
           border-bottom: 1px solid transparent;
         }
 
-        .navbar-custom.absolute {
-          position: absolute;
-          width: 100%;
-          background-color: transparent;
-        }
-
         .navbar-custom .navbar-brand {
           font-weight: 800;
         }
