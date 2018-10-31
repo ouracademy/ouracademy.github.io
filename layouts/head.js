@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const defaultMeta = {
+export const defaultMeta = {
   description:
     'Ouracademy es una academia para aprender de ingeniería de software, desde métodos y prácticas hasta las últimas tecnologías en el desarrollo de software',
   og: {
