@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header> should contain a nav menu  1`] = `
+Array [
+  <a
+    href="/about"
+  >
+    Nosotros
+  </a>,
+  <a
+    href="/tags"
+  >
+    Tags
+  </a>,
+]
+`;
