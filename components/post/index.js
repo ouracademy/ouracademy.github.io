@@ -84,6 +84,10 @@ export const Article = ({
         article li {
           padding: 1rem 0;
         }
+
+        article dd {
+          padding-bottom: 20px;
+        }
       `}</style>
       <style jsx>{`
         article {
