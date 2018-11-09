@@ -31,6 +31,7 @@ console.log(person.firstName)`
 export default () => (
   <Post
     title="Los lenguajes de programación innovadores"
+    image="https://www.uml-lab.com/typo3temp/pics/fcca69ce79.png"
     description="Los lenguajes que son la base de todos los lenguajes que hoy en día usamos."
     publishedAt="2018-11-06"
     author="@arthur"
