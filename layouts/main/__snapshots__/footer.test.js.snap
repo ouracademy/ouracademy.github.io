@@ -20,7 +20,7 @@ exports[`<Footer> 1`] = `
             key="facebook"
           >
             <a
-              href="https://facebook.com/academyForUs"
+              href="https://www.facebook.com/our.academy.org/"
               target="_blank"
             >
               <span

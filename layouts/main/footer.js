@@ -1,7 +1,7 @@
 const socialNetworks = [
   {
     name: 'facebook',
-    url: 'https://facebook.com/academyForUs'
+    url: 'https://www.facebook.com/our.academy.org/'
   },
   {
     name: 'youtube',
