@@ -2,38 +2,34 @@ import Head from '../layouts/head'
 import Page from '../layouts/main'
 import Slider from '../components/slider'
 
-export default () => {
-  const title = 'Nosotros'
-
-  return (
-    <div>
-      <Head />
-      <Page
-        slider={
-          <Slider
-            title={title}
-            subheading="Un grupo de amigos que se divierte aprendiendo"
-          />
-        }
-      >
-        <div className="container">
-          <section title="nosotros" className="row">
-            <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-              <p>
-                Somos un grupo de amigos que se divierte aprendiendo y enseñando
-                practicas, principios tecnologías y teorías en el desarrollo
-                software.
-              </p>
-            </div>
-          </section>
-          <section title="portfolio" className="row">
-            <PortFolio projects={getProjects()} />
-          </section>
-        </div>
-      </Page>
-    </div>
-  )
-}
+export default () => (
+  <div>
+    <Head title="Nosotros" />
+    <Page
+      slider={
+        <Slider
+          title="Nosotros"
+          subheading="Un grupo de amigos que se divierte aprendiendo"
+        />
+      }
+    >
+      <div className="container">
+        <section title="nosotros" className="row">
+          <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <p>
+              Somos un grupo de amigos que se divierte aprendiendo y enseñando
+              practicas, principios tecnologías y teorías en el desarrollo
+              software.
+            </p>
+          </div>
+        </section>
+        <section title="portfolio" className="row">
+          <PortFolio projects={getProjects()} />
+        </section>
+      </div>
+    </Page>
+  </div>
+)
 
 const PortFolio = ({ projects }) => (
   <div className="portfolio">
