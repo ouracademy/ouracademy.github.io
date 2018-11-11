@@ -1,15 +1,15 @@
-import Head, { defaultMeta } from './head'
+import Head, { defaultMeta, defaultTitle } from './head'
 import { shallow } from 'enzyme'
 
 describe('<Head>', () => {
   it('should show by default Ouracademy as <title>', () => {
     const component = shallow(<Head />)
-    expect(component.find('title').text()).toEqual('Ouracademy')
+    expect(component.find('title').text()).toEqual(defaultTitle)
   })
 
   it('should show the title property as <title>', () => {
     const component = shallow(<Head title="Nosotros" />)
-    expect(component.find('title').text()).toEqual('Nosotros')
+    expect(component.find('title').text()).toEqual('Nosotros - Ouracademy')
   })
 
   it.each([
