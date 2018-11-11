@@ -22,9 +22,9 @@ export const Tag = ({ name, posts }) => (
   </div>
 )
 
-const TagsPage = ({ tags, selectedTag, tag }) => (
+const TagsPage = ({ tags, selectedTag }) => (
   <Page>
-    <Head />
+    <Head title={selectedTag ? `Tag ${selectedTag.name}` : 'Tags'} />
     <article>
       <div className="container">
         <div className="row">

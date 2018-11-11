@@ -2,6 +2,7 @@ import TagsPage, { Tag, getTag } from './tags'
 import { shallow } from 'enzyme'
 import Posts, { Tags } from '../components/post/list'
 import { posts, tags } from '../api/get-tags.test'
+import Head from '../layouts/head'
 
 import fetch from 'isomorphic-fetch'
 
@@ -33,12 +34,20 @@ describe('<TagsPage>', () => {
     expect(wrapper.find(Tags)).toHaveLength(1)
     expect(wrapper.find(Tags).props().tags).toEqual(someTags)
   })
-  it('shows some suggestion when no tag is selected', () => {
+
+  describe('when no tag is selected', () => {
     const someTags = ['arquitectura', 'patron']
     const wrapper = shallow(<TagsPage tags={someTags} />)
-    expect(wrapper.find('.suggestion')).toHaveLength(1)
+
+    it('shows some suggestion', () => {
+      expect(wrapper.find('.suggestion')).toHaveLength(1)
+    })
+    it('shows Tags as title', () => {
+      expect(wrapper.find(Head).props().title).toEqual('Tags')
+    })
   })
-  it('shows a <Tag> when a tag is selected', () => {
+
+  describe('when a tag is selected', () => {
     const someTags = ['arquitectura', 'patron']
     const tag = {
       name: 'arquitectura',
@@ -49,11 +58,18 @@ describe('<TagsPage>', () => {
     }
 
     const wrapper = shallow(<TagsPage tags={someTags} selectedTag={tag} />)
-    const TagWrapper = wrapper.find(Tag)
-    expect(TagWrapper).toHaveLength(1)
-    expect(TagWrapper.props().name).toEqual(tag.name)
-    expect(TagWrapper.props().posts).toEqual(tag.posts)
+
+    it('shows a <Tag> when a tag is selected', () => {
+      const TagWrapper = wrapper.find(Tag)
+      expect(TagWrapper).toHaveLength(1)
+      expect(TagWrapper.props().name).toEqual(tag.name)
+      expect(TagWrapper.props().posts).toEqual(tag.posts)
+    })
+    it('shows Tags as title', () => {
+      expect(wrapper.find(Head).props().title).toEqual(`Tag ${tag.name}`)
+    })
   })
+
   describe('getInitialProps()', () => {
     beforeEach(() => {
       fetch.mockImplementation(() =>
