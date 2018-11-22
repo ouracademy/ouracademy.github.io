@@ -103,8 +103,14 @@ export default () => (
     <p>Cambios en el tiempo:</p>
     <p>
       <p>
-        <strong>Del siglo 19 al siglo 20</strong>
+        <strong>Del siglo XIX al XX: computadoras humanas</strong>
       </p>
+      Booch resalta que Ada Lovelace fue quizás la primera persona en comprender
+      que la programación era una cosa en sí misma, da a conocer que las
+      computadoras humanas era en mayoria mujeres y que un grupo en especial,
+      eran conocida como "Computadoras de Harvard", las cuales tenian una forma
+      de trabajo sorprendentemente similar a las prácticas contemporáneas de
+      desarrollo ágil.
     </p>
     <p>
       <p>
