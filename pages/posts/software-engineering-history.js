@@ -119,6 +119,22 @@ export default () => (
           computadora electrónica
         </strong>
       </p>
+      Esta etapa se marco por la promocion de la idea de construir mecanismos
+      electromecanicos para la computacion,la cual fue iniciada debido a que{' '}
+      <Link to="https://es.wikipedia.org/wiki/George_Robert_Stibitz">
+        George Stibitz
+      </Link>{' '}
+      aplico las ideas de logica booleana para construir el primer sumador
+      digital hecho a base de réles electromecanicos. Tiempo después nace una
+      nueva forma de pensamiento: el concepto de un ordenador electrónico
+      programable en base a instrucciones almacenadas en la memoria.{' '}
+      <Link to="https://es.wikipedia.org/wiki/Grace_Murray_Hopper">
+        Grace Hooper
+      </Link>
+      ; muy en el espíritu de Ada Lovelace, quien tenia la idea de que el
+      software podría ser una cosa en sí misma, se percato que se puede utilizar
+      la propia computadora para traducer estas instrucciones( con un orden
+      superior) en lenguaje de máquina; esto marca el inicio del compilador.
     </p>
     <p>
       <p>
@@ -127,16 +143,52 @@ export default () => (
           nacimiento de la ingeniería de software
         </strong>
       </p>
+      Al final de la Segunda Guerra Mundial, Las fuerzas técnicas y económicas
+      darían forma a la ingeniería de software moderna, donde comenzamos a ver
+      la informática aplicado a dominios problemáticos más allá de las
+      necesidades de conflicto. En este contexto tambien se puso de manifiesto
+      la idea de que uno podría externalizar el desarrollo de software a equipos
+      con habilidades informáticas particulares que una empresa con conocimiento
+      de dominio específico podría no poseer.
+    </p>
+
+    <p>
+      <p>
+        <strong>El ascenso de la guerra fría: la mayoría de edad</strong>
+      </p>
+      La Guerra Fría generó otro conjunto de fuerzas que llevaron a la
+      ingeniería de software a la madurez. En este contexto sucedieron tres
+      eventos importantes en la historia del software: El auge del software
+      comercial como un producto en sí mismo, las complejidades de sistemas de
+      defensa (SAGE) y el auge del software crítico para las personas como lo
+      exige el programa espacial de los Estados Unidos. En este tiempo es donde
+      Margaret Hamilton acuñó el término “ingenieria de software” y en el que la
+      OTAN declaró que había una "crsis del software".
     </p>
     <p>
       <p>
-        <strong>La guerra fria</strong>
+        <strong> De los años sesenta a la Años ochenta: la maduración</strong>
       </p>
+      En esta etapa: se introdujo la programacion modular junto con conceptos de
+      acoplamiento y cohesion como mecanismos de composicion de algoritmos,{' '}
+      <Link to="https://es.wikipedia.org/wiki/Edsger_Dijkstra">
+        Edsger Dijkstra
+      </Link>{' '}
+      adoptó un enfoque más formal y nos da una herramienta importante para la
+      Ingeniería del software: la idea de la programación estructurada, se
+      generaron las primeras metodologías de ingeniería de software y los
+      métodos de análisis y diseño estructurado.
     </p>
     <p>
       <p>
         <strong>Los años ochenta y más adelante: la edad de oro</strong>
       </p>
+      Debido a: los crecientes problemas de la calidad del software, el auge de
+      los sistemas intensivos de software, la globalización del software y el
+      desarrollo de sistemas distribuidos, nuevos enfoques fueron necesarios. Es
+      aqui cuando las ideas de Ole Dahl y Kristen sobre programacion orientado a
+      objetos dio lugar a lenguajes de programación como Smalltalk, C with
+      Classes, Ada, y muchos otros.
     </p>
     <p>
       <p>
